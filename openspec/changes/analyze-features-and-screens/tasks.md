@@ -18,7 +18,7 @@
 
 ## 4. Booking Engine Implemenation
 
-- [ ] 4.1 Develop core Booking flow (Select mode, doctor, real-time slot selection)
+- [x] 4.1 Develop core Booking flow (Select mode, doctor, real-time slot selection)
 - [ ] 4.2 Integrate Payment Gateways (Momo, VNPay) flow
 - [ ] 4.3 Develop Admin interface for Schedule Management (View, Approve, Cancel)
 
