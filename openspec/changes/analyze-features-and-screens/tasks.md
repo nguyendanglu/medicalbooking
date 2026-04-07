@@ -6,7 +6,7 @@
 
 ## 2. Client Portal Implementation
 
-- [ ] 2.1 Develop Homepage (Hero Banner, Highlights, Doctor Slider)
+- [x] 2.1 Develop Homepage (Hero Banner, Highlights, Doctor Slider)
 - [ ] 2.2 Develop Service Listing & Detail Pages (Pricing, Offerings)
 - [ ] 2.3 Develop Knowledge Base and News Article listing
 
