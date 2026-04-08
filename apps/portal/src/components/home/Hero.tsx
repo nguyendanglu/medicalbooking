@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export const Hero = () => {
   return (
     <section className="relative flex min-h-[90vh] flex-col items-center justify-center px-6 pt-20 text-center lg:px-8">
@@ -17,9 +19,9 @@ export const Hero = () => {
         </p>
         
         <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-          <button className="rounded-full bg-gradient-to-br from-primary to-primary-container px-8 py-4 text-lg font-bold text-white shadow-lg transition-all hover:scale-105 active:scale-95">
+          <Link href="/booking" className="rounded-full bg-gradient-to-br from-primary to-primary-container px-8 py-4 text-lg font-bold text-white shadow-lg transition-all hover:scale-105 active:scale-95">
             Đặt lịch khám ngay
-          </button>
+          </Link>
           <button className="rounded-full border-2 border-primary/20 bg-transparent px-8 py-4 text-lg font-bold text-primary transition-all hover:bg-primary/5">
             Tư vấn 24/7
           </button>
