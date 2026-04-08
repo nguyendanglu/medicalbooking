@@ -11,39 +11,42 @@ datasource db {
 
 
 model User {
-  id        String   @id @default(uuid())
-  email     String   @unique
-  password  String
-  firstName String?
-  lastName  String?
-  role      String   @default("PATIENT")
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id           String        @id @default(uuid())
+  email        String        @unique
+  password     String
+  firstName    String?
+  lastName     String?
+  role         String        @default("PATIENT")
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  appointments Appointment[]
 
   @@map("users")
 }
 
 model Doctor {
-  id         String   @id @default(uuid())
-  name       String
-  specialty  String
-  experience String
-  image      String?
-  rating     Float?
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
+  id           String        @id @default(uuid())
+  name         String
+  specialty    String
+  experience   String
+  image        String?
+  rating       Float?
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  appointments Appointment[]
 
   @@map("doctors")
 }
 
 model ServiceType {
-  id          String   @id @default(uuid())
-  title       String
-  description String
-  icon        String?
-  price       Float?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id           String        @id @default(uuid())
+  title        String
+  description  String
+  icon         String?
+  price        Float?
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  appointments Appointment[]
 
   @@map("service_types")
 }
@@ -72,4 +75,23 @@ model TimeSlot {
   updatedAt DateTime @updatedAt
 
   @@map("time_slots")
+}
+
+model Appointment {
+  id            String      @id @default(uuid())
+  doctorId      String
+  doctor        Doctor      @relation(fields: [doctorId], references: [id])
+  serviceTypeId String
+  serviceType   ServiceType @relation(fields: [serviceTypeId], references: [id])
+  timeSlot      String
+  date          String
+  patientName   String
+  patientPhone  String
+  reason        String
+  userId        String?
+  user          User?       @relation(fields: [userId], references: [id])
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+
+  @@map("appointments")
 }

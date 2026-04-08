@@ -12,6 +12,22 @@ export class PrismaService implements OnModuleInit, OnModuleDestroy {
     return this.client.user;
   }
 
+  get doctor() {
+    return this.client.doctor;
+  }
+
+  get serviceType() {
+    return this.client.serviceType;
+  }
+
+  get timeSlot() {
+    return this.client.timeSlot;
+  }
+
+  get appointment() {
+    return this.client.appointment;
+  }
+
   constructor() {
     const connectionString = process.env.DATABASE_URL;
 
