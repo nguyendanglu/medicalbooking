@@ -1,9 +1,60 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { Navbar } from '@/components/layout/Navbar';
 
 export default function LoginPage() {
+  const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch('http://localhost:3000/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        const data = await response.json();
+        throw new Error(data.message || 'Login failed');
+      }
+
+      const data = await response.json();
+      
+      // Store user data in localStorage (or handle auth correctly depending on architecture)
+      if (typeof window !== 'undefined' && data?.user) {
+         localStorage.setItem('user', JSON.stringify(data.user));
+      }
+
+      router.push('/');
+    } catch (err: any) {
+      setError(err.message);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <div className="relative min-h-screen bg-surface flex flex-col">
       <Navbar />
@@ -22,11 +73,21 @@ export default function LoginPage() {
               </p>
             </div>
 
-            <form className="space-y-6">
+            {error && (
+              <div className="mb-6 rounded-2xl bg-error/10 p-4 text-sm font-medium text-error">
+                {error}
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
                 <label className="text-xs font-bold text-on-surface uppercase tracking-wider ml-1">Email</label>
                 <input 
+                  required
                   type="email" 
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   placeholder="name@example.com"
                   className="w-full p-4 rounded-2xl bg-surface-container border-none focus:ring-2 focus:ring-primary outline-none transition-all placeholder:text-on-surface-variant/40"
                 />
@@ -40,21 +101,29 @@ export default function LoginPage() {
                   </Link>
                 </div>
                 <input 
+                  required
                   type="password" 
+                  name="password"
+                  value={formData.password}
+                  onChange={handleChange}
                   placeholder="••••••••"
                   className="w-full p-4 rounded-2xl bg-surface-container border-none focus:ring-2 focus:ring-primary outline-none transition-all placeholder:text-on-surface-variant/40"
                 />
               </div>
 
               <div className="pt-2">
-                <button className="w-full rounded-full bg-primary py-4 text-center font-bold text-white shadow-xl shadow-primary/20 transition-all hover:bg-primary-container hover:text-on-primary-container active:scale-[0.98]">
-                  Sign In
+                <button 
+                  disabled={isLoading}
+                  className="w-full rounded-full bg-primary py-4 text-center font-bold text-white shadow-xl shadow-primary/20 transition-all hover:bg-primary-container hover:text-on-primary-container active:scale-[0.98] disabled:opacity-50"
+                >
+                  {isLoading ? 'Đang xử lý...' : 'Sign In'}
                 </button>
               </div>
             </form>
 
             <div className="mt-10 text-center text-sm border-t border-surface-container pt-8">
               <span className="text-on-surface-variant">Don't have an account? </span>
+
               <Link href="/register" className="font-bold text-primary hover:underline">
                 Sign Up
               </Link>
