@@ -49,15 +49,61 @@ export const doctors = [
 
 export const news = [
   {
-    title: "Nhịp sinh học: Cân bằng giấc ngủ để phục hồi",
-    category: "Lối sống",
-    date: "07/04/2026",
+    id: 'future-personalized-longevity',
+    title: "The Future of Personalized Longevity: Beyond the Lab",
+    subtitle: "How multi-omic profiling and AI are redefining human healthspan in 2026.",
+    category: "Precision Medicine",
+    date: "08/04/2026",
+    image: "https://images.unsplash.com/photo-1579154236594-e17976451965?auto=format&fit=crop&q=80&w=1200",
+    author: "Dr. Sarah Mitchell",
+    readTime: "8 min read",
+    featured: true,
+    summary: "Multi-omic data integration is no longer a research luxury. It is becoming the cornerstone of proactive medical intervention.",
   },
   {
-    title: "AI trong chẩn đoán: Tăng cường độ chính xác",
-    category: "Công nghệ",
-    date: "05/04/2026",
+    id: 'cognitive-resilience',
+    title: "Building Cognitive Resilience through Nutritional Auditing",
+    category: "Wellness",
+    date: "07/04/2026",
+    image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800",
+    author: "ThS. BS. Lê Thị B",
+    readTime: "5 min read",
+    summary: "Discover the specific micronutrients that play a critical role in neuro-protection and synaptic plasticity.",
   },
+  {
+    id: 'smart-clinic-expansion',
+    title: "Smart Clinic Expansion: North District Health Sanctuary",
+    category: "Clinic News",
+    date: "06/04/2026",
+    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800",
+    author: "Admin Team",
+    readTime: "3 min read",
+    summary: "We are proud to announce the opening of our newest integrated care center, featuring advanced genomic imaging.",
+  },
+  {
+    id: 'circadian-recalibration',
+    title: "Circadian Recalibration: Science of the 20-Minute Reset",
+    category: "Health Tips",
+    date: "05/04/2026",
+    image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=800",
+    author: "TS. BS. Nguyễn Văn A",
+    readTime: "4 min read",
+    summary: "Short, evidence-based interventions to synchronize your biological clock for better cellular recovery.",
+  },
+];
+
+export const weeklyTip = {
+  title: "Weekly Bio-Hack: The 20-20-20 Rule",
+  description: "For every 20 minutes spent looking at a screen, look at something 20 feet away for 20 seconds. This reduces ocular strain and resets autonomic focus.",
+  cta: "Learn more about Eye Health",
+};
+
+export const newsCategories = [
+  "All",
+  "Precision Medicine",
+  "Wellness",
+  "Clinic News",
+  "Health Tips",
 ];
 
 export const services = [

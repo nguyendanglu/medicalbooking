@@ -16,7 +16,7 @@ export const Navbar = () => {
             { name: 'Trang chủ', href: '/' },
             { name: 'Dịch vụ', href: '/services' },
             { name: 'Bác sĩ', href: '#' },
-            { name: 'Tin tức', href: '#' },
+            { name: 'Tin tức', href: '/news' },
             { name: 'Hồ sơ y tế', href: '#' }
           ].map((item) => (
             <Link 
@@ -29,9 +29,12 @@ export const Navbar = () => {
           ))}
         </div>
 
-        <button className="rounded-full bg-surface-container-high px-6 py-2.5 text-sm font-semibold text-primary transition-all hover:bg-primary/10">
+        <Link 
+          href="/login"
+          className="rounded-full bg-surface-container-high px-6 py-2.5 text-sm font-semibold text-primary transition-all hover:bg-primary/10"
+        >
           Đăng nhập
-        </button>
+        </Link>
       </div>
     </nav>
   );
