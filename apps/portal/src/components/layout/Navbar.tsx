@@ -12,13 +12,19 @@ export const Navbar = () => {
         </div>
         
         <div className="hidden gap-8 md:flex">
-          {['Dịch vụ', 'Bác sĩ', 'Tin tức', 'Hồ sơ y tế'].map((item) => (
+          {[
+            { name: 'Trang chủ', href: '/' },
+            { name: 'Dịch vụ', href: '/services' },
+            { name: 'Bác sĩ', href: '#' },
+            { name: 'Tin tức', href: '#' },
+            { name: 'Hồ sơ y tế', href: '#' }
+          ].map((item) => (
             <Link 
-              key={item} 
-              href="#" 
+              key={item.name} 
+              href={item.href} 
               className="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors"
             >
-              {item}
+              {item.name}
             </Link>
           ))}
         </div>

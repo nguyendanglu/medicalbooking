@@ -77,3 +77,52 @@ export const services = [
     icon: "ShoppingBag",
   },
 ];
+
+export const healthPackages = [
+  {
+    id: 'premium-sanctuary',
+    title: 'Premium Year-round Sanctuary',
+    description: 'Our most comprehensive longitudinal care package, designed for those who view health as their ultimate asset.',
+    featured: true,
+    features: [
+      'Personalized Health Roadmap',
+      '24/7 Dedicated Care Coordinator',
+      'Advanced Genomic Profiling',
+      'Priority Specialist Access'
+    ],
+    price: 'Liên hệ',
+  },
+  {
+    id: 'pediatric-flourish',
+    title: 'Pediatric Flourish',
+    description: 'Essential developmental tracking and immunity auditing for your growing children.',
+    features: [
+      'Cognitive Milestone Review',
+      'Nutritional Balance Labs',
+      'Vision & Hearing Diagnostics'
+    ],
+    price: '2.500.000đ',
+  },
+  {
+    id: 'core-vital-audit',
+    title: 'Core Vital Audit',
+    description: 'A comprehensive baseline evaluation of metabolic, cardiac, and respiratory health.',
+    features: [
+      'Full Metabolic Panel',
+      'Resting ECG & Cardiac Markers',
+      'Physician Analysis Session'
+    ],
+    price: '4.800.000đ',
+  },
+  {
+    id: 'early-detection',
+    title: 'Early Detection Shield',
+    description: 'Advanced imaging and fluid biopsy screening for early-stage oncological markers.',
+    features: [
+      'Liquid Biopsy (Pan-cancer)',
+      'Targeted Ultrasound Imaging',
+      'Specialist Consultation'
+    ],
+    price: '8.200.000đ',
+  },
+];

@@ -14,7 +14,7 @@ export class PrismaService extends PrismaClient implements OnModuleInit, OnModul
     
     neonConfig.webSocketConstructor = ws;
     const pool = new Pool({ connectionString });
-    const adapter = new PrismaNeon(pool);
+    const adapter = new PrismaNeon(pool as any);
     
     super({ adapter });
     this.pool = pool;
