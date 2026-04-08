@@ -8,40 +8,38 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PrismaService = void 0;
 const common_1 = require("@nestjs/common");
 const client_1 = require("@prisma/client");
-const config_1 = require("@nestjs/config");
-const adapter_neon_1 = require("@prisma/adapter-neon");
-const serverless_1 = require("@neondatabase/serverless");
-const ws_1 = __importDefault(require("ws"));
-let PrismaService = class PrismaService extends client_1.PrismaClient {
-    configService;
+const adapter_pg_1 = require("@prisma/adapter-pg");
+const pg_1 = require("pg");
+let PrismaService = class PrismaService {
+    client;
     pool;
-    constructor(configService) {
-        const connectionString = configService.get('DATABASE_URL');
-        serverless_1.neonConfig.webSocketConstructor = ws_1.default;
-        const pool = new serverless_1.Pool({ connectionString });
-        const adapter = new adapter_neon_1.PrismaNeon(pool);
-        super({ adapter });
-        this.configService = configService;
-        this.pool = pool;
+    get user() {
+        return this.client.user;
+    }
+    constructor() {
+        const connectionString = process.env.DATABASE_URL;
+        if (!connectionString) {
+            throw new Error('DATABASE_URL environment variable is not set');
+        }
+        this.pool = new pg_1.Pool({ connectionString });
+        const adapter = new adapter_pg_1.PrismaPg(this.pool);
+        this.client = new client_1.PrismaClient({ adapter });
     }
     async onModuleInit() {
-        await this.$connect();
+        await this.client.$connect();
     }
     async onModuleDestroy() {
-        await this.$disconnect();
+        await this.client.$disconnect();
         await this.pool.end();
     }
 };
 exports.PrismaService = PrismaService;
 exports.PrismaService = PrismaService = __decorate([
     (0, common_1.Injectable)(),
-    __metadata("design:paramtypes", [config_1.ConfigService])
+    __metadata("design:paramtypes", [])
 ], PrismaService);
 //# sourceMappingURL=prisma.service.js.map

@@ -1,35 +1,35 @@
 import { Injectable, OnModuleInit, OnModuleDestroy } from '@nestjs/common';
 import { PrismaClient } from '@prisma/client';
-import { ConfigService } from '@nestjs/config';
-import { PrismaNeon } from '@prisma/adapter-neon';
-import { Pool, neonConfig } from '@neondatabase/serverless';
-import ws from 'ws';
+import { PrismaPg } from '@prisma/adapter-pg';
+import { Pool } from 'pg';
 
 @Injectable()
-export class PrismaService extends PrismaClient implements OnModuleInit, OnModuleDestroy {
-  private pool: Pool;
+export class PrismaService implements OnModuleInit, OnModuleDestroy {
+  private readonly client: PrismaClient;
+  private readonly pool: Pool;
 
-  constructor(private configService: ConfigService) {
-    const connectionString = configService.get<string>('DATABASE_URL');
-    
-    neonConfig.webSocketConstructor = ws;
-    const pool = new Pool({ connectionString });
-    const adapter = new PrismaNeon(pool as any);
-    
-    super({ adapter });
-    this.pool = pool;
+  get user() {
+    return this.client.user;
   }
 
+  constructor() {
+    const connectionString = process.env.DATABASE_URL;
+
+    if (!connectionString) {
+      throw new Error('DATABASE_URL environment variable is not set');
+    }
+
+    this.pool = new Pool({ connectionString });
+    const adapter = new PrismaPg(this.pool);
+    this.client = new PrismaClient({ adapter });
+  }
 
   async onModuleInit() {
-    await this.$connect();
+    await this.client.$connect();
   }
 
   async onModuleDestroy() {
-    await this.$disconnect();
+    await this.client.$disconnect();
     await this.pool.end();
   }
 }
-
-
-

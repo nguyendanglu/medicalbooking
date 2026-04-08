@@ -1,9 +1,60 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { Navbar } from '@/components/layout/Navbar';
 
 export default function RegisterPage() {
+  const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch('http://localhost:3000/auth/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        const data = await response.json();
+        throw new Error(data.message || 'Registration failed');
+      }
+
+      setSuccess(true);
+      // Auto-redirect after 2 seconds
+      setTimeout(() => {
+        router.push('/login');
+      }, 2000);
+    } catch (err: any) {
+      setError(err.message);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <div className="relative min-h-screen bg-surface">
       <Navbar />
@@ -65,60 +116,98 @@ export default function RegisterPage() {
               <p className="text-on-surface-variant">Start your journey to a healthier you today.</p>
             </div>
 
-            <form className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
+            {error && (
+              <div className="mb-6 rounded-2xl bg-error/10 p-4 text-sm font-medium text-error">
+                {error}
+              </div>
+            )}
+
+            {success ? (
+              <div className="rounded-3xl bg-primary/10 p-8 text-center">
+                <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-primary text-white">
+                  <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <h3 className="mb-2 text-xl font-bold text-on-surface">Registration Successful!</h3>
+                <p className="text-on-surface-variant">Welcome to the sanctuary of health. Redirecting you to login...</p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <label className="text-sm font-bold text-on-surface">Họ</label>
+                    <input 
+                      required
+                      type="text" 
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleChange}
+                      placeholder="Nguyễn"
+                      className="w-full p-4 rounded-2xl bg-surface-container-low border-none focus:ring-2 focus:ring-primary outline-none transition-all"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-bold text-on-surface">Tên</label>
+                    <input 
+                      required
+                      type="text" 
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleChange}
+                      placeholder="Văn A"
+                      className="w-full p-4 rounded-2xl bg-surface-container-low border-none focus:ring-2 focus:ring-primary outline-none transition-all"
+                    />
+                  </div>
+                </div>
+
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-on-surface">Họ</label>
+                  <label className="text-sm font-bold text-on-surface">Email</label>
                   <input 
-                    type="text" 
-                    placeholder="Nguyễn"
+                    required
+                    type="email" 
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="name@example.com"
                     className="w-full p-4 rounded-2xl bg-surface-container-low border-none focus:ring-2 focus:ring-primary outline-none transition-all"
                   />
                 </div>
+
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-on-surface">Tên</label>
+                  <label className="text-sm font-bold text-on-surface">Mật khẩu</label>
                   <input 
-                    type="text" 
-                    placeholder="Văn A"
+                    required
+                    type="password" 
+                    name="password"
+                    value={formData.password}
+                    onChange={handleChange}
+                    placeholder="••••••••"
+                    minLength={8}
                     className="w-full p-4 rounded-2xl bg-surface-container-low border-none focus:ring-2 focus:ring-primary outline-none transition-all"
                   />
+                  <p className="text-xs text-on-surface-variant">Tối thiểu 8 ký tự, bao gồm chữ cái và số.</p>
                 </div>
-              </div>
 
-              <div className="space-y-2">
-                <label className="text-sm font-bold text-on-surface">Email</label>
-                <input 
-                  type="email" 
-                  placeholder="name@example.com"
-                  className="w-full p-4 rounded-2xl bg-surface-container-low border-none focus:ring-2 focus:ring-primary outline-none transition-all"
-                />
-              </div>
+                <div className="flex items-center gap-3">
+                  <input required type="checkbox" id="terms" className="h-5 w-5 rounded border-surface-container-high text-primary focus:ring-primary" />
+                  <label htmlFor="terms" className="text-xs text-on-surface-variant leading-relaxed">
+                    Tôi đồng ý với <Link href="#" className="font-bold text-primary hover:underline">Điều khoản Dịch vụ</Link> và <Link href="#" className="font-bold text-primary hover:underline">Chính sách Bảo mật</Link>.
+                  </label>
+                </div>
 
-              <div className="space-y-2">
-                <label className="text-sm font-bold text-on-surface">Mật khẩu</label>
-                <input 
-                  type="password" 
-                  placeholder="••••••••"
-                  className="w-full p-4 rounded-2xl bg-surface-container-low border-none focus:ring-2 focus:ring-primary outline-none transition-all"
-                />
-                <p className="text-xs text-on-surface-variant">Tối thiểu 8 ký tự, bao gồm chữ cái và số.</p>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <input type="checkbox" id="terms" className="h-5 w-5 rounded border-surface-container-high text-primary focus:ring-primary" />
-                <label htmlFor="terms" className="text-xs text-on-surface-variant leading-relaxed">
-                  Tôi đồng ý với <Link href="#" className="font-bold text-primary hover:underline">Điều khoản Dịch vụ</Link> và <Link href="#" className="font-bold text-primary hover:underline">Chính sách Bảo mật</Link>.
-                </label>
-              </div>
-
-              <button className="w-full rounded-full bg-primary py-4 text-center font-bold text-white shadow-xl transition-all hover:bg-primary-container active:scale-95">
-                Đăng ký ngay
-              </button>
-            </form>
+                <button 
+                  disabled={isLoading}
+                  className="w-full rounded-full bg-primary py-4 text-center font-bold text-white shadow-xl transition-all hover:bg-primary-container active:scale-95 disabled:opacity-50"
+                >
+                  {isLoading ? 'Đang xử lý...' : 'Đăng ký ngay'}
+                </button>
+              </form>
+            )}
 
             <div className="mt-12 text-center text-sm">
               <span className="text-on-surface-variant">Already have an account? </span>
-              <Link href="#" className="font-bold text-primary hover:underline">Sign In</Link>
+              <Link href="/login" className="font-bold text-primary hover:underline">Sign In</Link>
             </div>
           </div>
         </div>
