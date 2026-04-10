@@ -37,7 +37,10 @@ let AppointmentsService = class AppointmentsService {
                 date: data.date,
                 patientName: data.patientName,
                 patientPhone: data.patientPhone,
-                reason: data.reason
+                reason: data.reason,
+                userId: data.userId,
+                serviceType: data.serviceType,
+                doctor: data.doctor,
             }
         });
     }
