@@ -63,6 +63,20 @@ export const BookingForm = () => {
   const onSubmit = async (data: BookingFormData) => {
     try {
       const API_URL = process.env.NEXT_PUBLIC_BACKEND_HOME_URL || 'http://localhost:3000';
+      
+      let currentUserId = null;
+      if (typeof window !== 'undefined') {
+        try {
+          const userStr = localStorage.getItem('user');
+          if (userStr) {
+            const user = JSON.parse(userStr);
+            currentUserId = user.id || null;
+          }
+        } catch (e) {
+          console.error(e);
+        }
+      }
+
       const response = await fetch(`${API_URL}/appointments`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -74,9 +88,7 @@ export const BookingForm = () => {
           patientName: data.patientName,
           patientPhone: data.patientPhone,
           reason: data.reason || 'Không có',
-          doctor: selectedDoctor?.name,
-          serviceType: selectedService?.title,
-          userId: 'df23bb9f-102f-4672-9481-af62c66a6170',
+          userId: currentUserId,
         }),
       });
 
@@ -118,8 +130,8 @@ export const BookingForm = () => {
                   key={type.id}
                   onClick={() => setValue('serviceTypeId', type.id)}
                   className={`flex flex-col p-6 rounded-2xl border-2 transition-all text-left ${formData.serviceTypeId === type.id
-                      ? 'border-primary bg-primary/5'
-                      : 'border-surface-container-low hover:border-primary/20'
+                    ? 'border-primary bg-primary/5'
+                    : 'border-surface-container-low hover:border-primary/20'
                     }`}
                 >
                   <h3 className="font-bold text-on-surface mb-1">{type.title}</h3>
@@ -143,8 +155,8 @@ export const BookingForm = () => {
                   key={doctor.id}
                   onClick={() => setValue('doctorId', doctor.id)}
                   className={`flex items-center gap-6 w-full p-4 rounded-2xl border-2 transition-all text-left ${formData.doctorId === doctor.id
-                      ? 'border-primary bg-primary/5'
-                      : 'border-surface-container-low hover:border-primary/20'
+                    ? 'border-primary bg-primary/5'
+                    : 'border-surface-container-low hover:border-primary/20'
                     }`}
                 >
                   <div className="relative h-20 w-20 overflow-hidden rounded-xl bg-surface-container-high">
@@ -178,8 +190,8 @@ export const BookingForm = () => {
                   key={slot.id}
                   onClick={() => setValue('timeSlot', slot.time)}
                   className={`py-3 rounded-xl border-2 font-bold transition-all ${formData.timeSlot === slot.time
-                      ? 'border-primary bg-primary text-white'
-                      : 'border-surface-container-low text-on-surface hover:border-primary/20'
+                    ? 'border-primary bg-primary text-white'
+                    : 'border-surface-container-low text-on-surface hover:border-primary/20'
                     }`}
                 >
                   {slot.time}
