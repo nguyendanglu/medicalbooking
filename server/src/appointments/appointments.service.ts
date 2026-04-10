@@ -30,8 +30,6 @@ export class AppointmentsService {
         patientPhone: data.patientPhone,
         reason: data.reason,
         userId: data.userId,
-        serviceType: data.serviceType,
-        doctor: data.doctor,
       }
     });
   }
