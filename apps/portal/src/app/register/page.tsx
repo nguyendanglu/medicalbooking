@@ -30,7 +30,8 @@ export default function RegisterPage() {
     setError(null);
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_HOME_URL}/auth/register`, {
+      const API_URL = process.env.NEXT_PUBLIC_BACKEND_HOME_URL || 'http://localhost:3000';
+      const response = await fetch(`${API_URL}/auth/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

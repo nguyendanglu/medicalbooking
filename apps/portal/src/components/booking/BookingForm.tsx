@@ -44,10 +44,11 @@ export const BookingForm = () => {
   const formData = watch();
 
   useEffect(() => {
+    const API_URL = process.env.NEXT_PUBLIC_BACKEND_HOME_URL || 'http://localhost:3000';
     Promise.all([
-      fetch(`${process.env.NEXT_PUBLIC_BACKEND_HOME_URL}/appointments/services`).then(res => res.json()),
-      fetch(`${process.env.NEXT_PUBLIC_BACKEND_HOME_URL}/appointments/doctors`).then(res => res.json()),
-      fetch(`${process.env.NEXT_PUBLIC_BACKEND_HOME_URL}/appointments/time-slots`).then(res => res.json())
+      fetch(`${API_URL}/appointments/services`).then(res => res.json()),
+      fetch(`${API_URL}/appointments/doctors`).then(res => res.json()),
+      fetch(`${API_URL}/appointments/time-slots`).then(res => res.json())
     ]).then(([servicesData, doctorsData, timeSlotsData]) => {
       setServiceTypes(servicesData);
       setDoctors(doctorsData);
@@ -61,7 +62,8 @@ export const BookingForm = () => {
 
   const onSubmit = async (data: BookingFormData) => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_HOME_URL}/appointments`, {
+      const API_URL = process.env.NEXT_PUBLIC_BACKEND_HOME_URL || 'http://localhost:3000';
+      const response = await fetch(`${API_URL}/appointments`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

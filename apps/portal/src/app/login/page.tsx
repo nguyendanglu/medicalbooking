@@ -27,7 +27,8 @@ export default function LoginPage() {
     setError(null);
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_HOME_URL}/auth/login`, {
+      const API_URL = process.env.NEXT_PUBLIC_BACKEND_HOME_URL || 'http://localhost:3000';
+      const response = await fetch(`${API_URL}/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -36,8 +37,13 @@ export default function LoginPage() {
       });
 
       if (!response.ok) {
-        const data = await response.json();
-        throw new Error(data.message || 'Login failed');
+        const contentType = response.headers.get("content-type");
+        if (contentType && contentType.indexOf("application/json") !== -1) {
+          const data = await response.json();
+          throw new Error(data.message || 'Login failed');
+        } else {
+          throw new Error('Lỗi máy chủ hoặc sai đường dẫn truy cập');
+        }
       }
 
       const data = await response.json();
