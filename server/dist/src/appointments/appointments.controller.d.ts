@@ -3,14 +3,14 @@ export declare class AppointmentsController {
     private readonly appointmentsService;
     constructor(appointmentsService: AppointmentsService);
     getDoctors(): Promise<{
-        id: string;
         name: string;
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
         specialty: string;
         experience: string;
         image: string | null;
         rating: number | null;
-        createdAt: Date;
-        updatedAt: Date;
     }[]>;
     getServices(): Promise<{
         id: string;
@@ -31,13 +31,13 @@ export declare class AppointmentsController {
         id: string;
         createdAt: Date;
         updatedAt: Date;
+        doctorId: string;
+        serviceTypeId: string;
         timeSlot: string;
         date: string;
         patientName: string;
         patientPhone: string;
         reason: string;
-        doctorId: string;
-        serviceTypeId: string;
         userId: string | null;
     }>;
 }
