@@ -27,7 +27,7 @@ export default function LoginPage() {
     setError(null);
 
     try {
-      const response = await fetch('http://localhost:3000/auth/login', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_HOME_URL}/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -41,10 +41,10 @@ export default function LoginPage() {
       }
 
       const data = await response.json();
-      
+
       // Store user data in localStorage (or handle auth correctly depending on architecture)
       if (typeof window !== 'undefined' && data?.user) {
-         localStorage.setItem('user', JSON.stringify(data.user));
+        localStorage.setItem('user', JSON.stringify(data.user));
       }
 
       router.push('/');
@@ -58,7 +58,7 @@ export default function LoginPage() {
   return (
     <div className="relative min-h-screen bg-surface flex flex-col">
       <Navbar />
-      
+
       <main className="flex-grow flex items-center justify-center px-6 pt-24 pb-12">
         {/* Decorative background elements */}
         <div className="absolute top-[20%] left-[10%] h-[30%] w-[30%] rounded-full bg-primary/5 blur-3xl -z-10" />
@@ -82,9 +82,9 @@ export default function LoginPage() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
                 <label className="text-xs font-bold text-on-surface uppercase tracking-wider ml-1">Email</label>
-                <input 
+                <input
                   required
-                  type="email" 
+                  type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
@@ -100,9 +100,9 @@ export default function LoginPage() {
                     Quên mật khẩu?
                   </Link>
                 </div>
-                <input 
+                <input
                   required
-                  type="password" 
+                  type="password"
                   name="password"
                   value={formData.password}
                   onChange={handleChange}
@@ -112,7 +112,7 @@ export default function LoginPage() {
               </div>
 
               <div className="pt-2">
-                <button 
+                <button
                   disabled={isLoading}
                   className="w-full rounded-full bg-primary py-4 text-center font-bold text-white shadow-xl shadow-primary/20 transition-all hover:bg-primary-container hover:text-on-primary-container active:scale-[0.98] disabled:opacity-50"
                 >
@@ -129,7 +129,7 @@ export default function LoginPage() {
               </Link>
             </div>
           </div>
-          
+
           <div className="mt-8 text-center text-xs text-on-surface-variant/60">
             <p>© 2024 The Clinical Editorial. <br />The Curated Sanctuary for Healthcare.</p>
           </div>

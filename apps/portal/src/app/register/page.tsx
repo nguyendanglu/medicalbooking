@@ -30,7 +30,7 @@ export default function RegisterPage() {
     setError(null);
 
     try {
-      const response = await fetch('http://localhost:3000/auth/register', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_HOME_URL}/auth/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -58,7 +58,7 @@ export default function RegisterPage() {
   return (
     <div className="relative min-h-screen bg-surface">
       <Navbar />
-      
+
       <main className="flex min-h-screen flex-col lg:flex-row pt-20">
         {/* Left Side: Brand Story & Values */}
         <div className="relative hidden w-full lg:flex lg:w-1/2 flex-col justify-center px-12 xl:px-24 bg-surface-container-low overflow-hidden">
@@ -137,9 +137,9 @@ export default function RegisterPage() {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-on-surface">Họ</label>
-                    <input 
+                    <input
                       required
-                      type="text" 
+                      type="text"
                       name="lastName"
                       value={formData.lastName}
                       onChange={handleChange}
@@ -149,9 +149,9 @@ export default function RegisterPage() {
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-on-surface">Tên</label>
-                    <input 
+                    <input
                       required
-                      type="text" 
+                      type="text"
                       name="firstName"
                       value={formData.firstName}
                       onChange={handleChange}
@@ -163,9 +163,9 @@ export default function RegisterPage() {
 
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-on-surface">Email</label>
-                  <input 
+                  <input
                     required
-                    type="email" 
+                    type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
@@ -176,9 +176,9 @@ export default function RegisterPage() {
 
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-on-surface">Mật khẩu</label>
-                  <input 
+                  <input
                     required
-                    type="password" 
+                    type="password"
                     name="password"
                     value={formData.password}
                     onChange={handleChange}
@@ -196,7 +196,7 @@ export default function RegisterPage() {
                   </label>
                 </div>
 
-                <button 
+                <button
                   disabled={isLoading}
                   className="w-full rounded-full bg-primary py-4 text-center font-bold text-white shadow-xl transition-all hover:bg-primary-container active:scale-95 disabled:opacity-50"
                 >
