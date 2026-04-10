@@ -74,6 +74,9 @@ export const BookingForm = () => {
           patientName: data.patientName,
           patientPhone: data.patientPhone,
           reason: data.reason || 'Không có',
+          doctor: selectedDoctor?.name,
+          serviceType: selectedService?.title,
+          userId: 'df23bb9f-102f-4672-9481-af62c66a6170',
         }),
       });
 
@@ -114,13 +117,12 @@ export const BookingForm = () => {
                   type="button"
                   key={type.id}
                   onClick={() => setValue('serviceTypeId', type.id)}
-                  className={`flex flex-col p-6 rounded-2xl border-2 transition-all text-left ${
-                    formData.serviceTypeId === type.id 
-                    ? 'border-primary bg-primary/5' 
-                    : 'border-surface-container-low hover:border-primary/20'
-                  }`}
+                  className={`flex flex-col p-6 rounded-2xl border-2 transition-all text-left ${formData.serviceTypeId === type.id
+                      ? 'border-primary bg-primary/5'
+                      : 'border-surface-container-low hover:border-primary/20'
+                    }`}
                 >
-                  <h3 className="font-bold text-on-surface mb-1">{type.name}</h3>
+                  <h3 className="font-bold text-on-surface mb-1">{type.title}</h3>
                   <p className="text-sm text-on-surface-variant">{type.description}</p>
                 </button>
               ))}
@@ -140,11 +142,10 @@ export const BookingForm = () => {
                   type="button"
                   key={doctor.id}
                   onClick={() => setValue('doctorId', doctor.id)}
-                  className={`flex items-center gap-6 w-full p-4 rounded-2xl border-2 transition-all text-left ${
-                    formData.doctorId === doctor.id 
-                    ? 'border-primary bg-primary/5' 
-                    : 'border-surface-container-low hover:border-primary/20'
-                  }`}
+                  className={`flex items-center gap-6 w-full p-4 rounded-2xl border-2 transition-all text-left ${formData.doctorId === doctor.id
+                      ? 'border-primary bg-primary/5'
+                      : 'border-surface-container-low hover:border-primary/20'
+                    }`}
                 >
                   <div className="relative h-20 w-20 overflow-hidden rounded-xl bg-surface-container-high">
                     {/* Placeholder image if property missing */}
@@ -176,11 +177,10 @@ export const BookingForm = () => {
                   type="button"
                   key={slot.id}
                   onClick={() => setValue('timeSlot', slot.time)}
-                  className={`py-3 rounded-xl border-2 font-bold transition-all ${
-                    formData.timeSlot === slot.time 
-                    ? 'border-primary bg-primary text-white' 
-                    : 'border-surface-container-low text-on-surface hover:border-primary/20'
-                  }`}
+                  className={`py-3 rounded-xl border-2 font-bold transition-all ${formData.timeSlot === slot.time
+                      ? 'border-primary bg-primary text-white'
+                      : 'border-surface-container-low text-on-surface hover:border-primary/20'
+                    }`}
                 >
                   {slot.time}
                 </button>
@@ -197,29 +197,29 @@ export const BookingForm = () => {
             </h2>
             <div className="space-y-4">
               <div>
-                <input 
-                  type="text" 
+                <input
+                  type="text"
                   {...register('patientName')}
-                  placeholder="Họ và tên" 
+                  placeholder="Họ và tên"
                   className="w-full p-4 rounded-xl bg-surface-container-low border-none focus:ring-2 focus:ring-primary outline-none"
                 />
                 {errors.patientName && <p className="text-red-500 text-sm mt-1">{errors.patientName.message}</p>}
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <input 
-                    type="tel" 
+                  <input
+                    type="tel"
                     {...register('patientPhone')}
-                    placeholder="Số điện thoại" 
+                    placeholder="Số điện thoại"
                     className="w-full p-4 rounded-xl bg-surface-container-low border-none focus:ring-2 focus:ring-primary outline-none"
                   />
                   {errors.patientPhone && <p className="text-red-500 text-sm mt-1">{errors.patientPhone.message}</p>}
                 </div>
                 <div>
-                  <input 
-                    type="email" 
+                  <input
+                    type="email"
                     {...register('email')}
-                    placeholder="Email (Tùy chọn)" 
+                    placeholder="Email (Tùy chọn)"
                     className="w-full p-4 rounded-xl bg-surface-container-low border-none focus:ring-2 focus:ring-primary outline-none"
                   />
                   {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
@@ -233,11 +233,11 @@ export const BookingForm = () => {
         <div className="lg:col-span-1">
           <div className="sticky top-28 space-y-6 rounded-3xl bg-surface-container-low p-8">
             <h2 className="text-lg font-bold text-on-surface">Tóm tắt đặt lịch</h2>
-            
+
             <div className="space-y-4 border-b border-surface-container-high pb-6 text-sm">
               <div className="flex justify-between items-center gap-4">
                 <span className="text-on-surface-variant min-w-[80px]">Hình thức:</span>
-                <span className="font-bold text-on-surface text-right">{selectedService?.name || 'Chưa chọn'}</span>
+                <span className="font-bold text-on-surface text-right">{selectedService?.title || 'Chưa chọn'}</span>
               </div>
               <div className="flex justify-between items-center gap-4">
                 <span className="text-on-surface-variant min-w-[80px]">Bác sĩ:</span>

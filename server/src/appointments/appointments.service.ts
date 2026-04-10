@@ -3,7 +3,7 @@ import { PrismaService } from '../prisma/prisma.service';
 
 @Injectable()
 export class AppointmentsService {
-  constructor(private prisma: PrismaService) {}
+  constructor(private prisma: PrismaService) { }
 
   async getDoctors() {
     return this.prisma.doctor.findMany();
@@ -28,7 +28,10 @@ export class AppointmentsService {
         date: data.date,
         patientName: data.patientName,
         patientPhone: data.patientPhone,
-        reason: data.reason
+        reason: data.reason,
+        userId: data.userId,
+        serviceType: data.serviceType,
+        doctor: data.doctor,
       }
     });
   }
