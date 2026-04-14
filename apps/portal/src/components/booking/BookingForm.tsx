@@ -37,7 +37,7 @@ export const BookingForm = () => {
       patientName: '',
       patientPhone: '',
       email: '',
-      reason: 'Khám định kỳ', // Default reason or let user type
+      reason: '',
     },
   });
 
@@ -159,9 +159,19 @@ export const BookingForm = () => {
                     : 'border-surface-container-low hover:border-primary/20'
                     }`}
                 >
-                  <div className="relative h-20 w-20 overflow-hidden rounded-xl bg-surface-container-high">
-                    {/* Placeholder image if property missing */}
-                    <div className="w-full h-full bg-neutral-200"></div>
+                  <div className="relative h-20 w-20 overflow-hidden rounded-xl bg-surface-container-high group-hover:shadow-md transition-all">
+                    {doctor.image ? (
+                      <Image 
+                        src={doctor.image} 
+                        alt={doctor.name} 
+                        fill 
+                        className="object-cover transition-transform duration-500 hover:scale-110" 
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-neutral-200 flex items-center justify-center">
+                        <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-widest">No Pic</span>
+                      </div>
+                    )}
                   </div>
                   <div>
                     <h3 className="font-bold text-on-surface">{doctor.name}</h3>
@@ -246,6 +256,15 @@ export const BookingForm = () => {
           <div className="sticky top-28 space-y-6 rounded-3xl bg-surface-container-low p-8">
             <h2 className="text-lg font-bold text-on-surface">Tóm tắt đặt lịch</h2>
 
+            <div className="space-y-2">
+              <label className="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest ml-1">Lý do thăm khám</label>
+              <textarea 
+                {...register('reason')}
+                placeholder="Ví dụ: Đau đầu, tái khám..."
+                rows={2}
+                className="w-full p-4 rounded-2xl bg-surface-container border-none focus:ring-2 focus:ring-primary outline-none transition-all text-sm resize-none font-medium placeholder:text-on-surface-variant/40"
+              />
+            </div>
             <div className="space-y-4 border-b border-surface-container-high pb-6 text-sm">
               <div className="flex justify-between items-center gap-4">
                 <span className="text-on-surface-variant min-w-[80px]">Hình thức:</span>
