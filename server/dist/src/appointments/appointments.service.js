@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppointmentsService = void 0;
 const common_1 = require("@nestjs/common");
 const prisma_service_1 = require("../prisma/prisma.service");
+const client_1 = require("@prisma/client");
 let AppointmentsService = class AppointmentsService {
     prisma;
     constructor(prisma) {
@@ -39,9 +40,20 @@ let AppointmentsService = class AppointmentsService {
                 patientPhone: data.patientPhone,
                 reason: data.reason,
                 userId: data.userId,
-                serviceType: data.serviceType,
-                doctor: data.doctor,
+                status: client_1.AppointmentStatus.PENDING,
             }
+        });
+    }
+    async getUserAppointments(userId) {
+        return this.prisma.appointment.findMany({
+            where: { userId },
+            include: {
+                doctor: true,
+                serviceType: true,
+            },
+            orderBy: {
+                date: 'desc',
+            },
         });
     }
 };

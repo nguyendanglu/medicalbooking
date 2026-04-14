@@ -17,6 +17,8 @@ export const metadata: Metadata = {
   description: "Giải pháp chăm sóc sức khỏe toàn diện với công nghệ hiện đại.",
 };
 
+import Providers from "./providers";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -27,7 +29,9 @@ export default function RootLayout({
       lang="vi"
       className={`${manrope.variable} ${publicSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-body">{children}</body>
+      <body className="min-h-full flex flex-col font-body">
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }

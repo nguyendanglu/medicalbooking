@@ -20,6 +20,9 @@ let AppointmentsController = class AppointmentsController {
     constructor(appointmentsService) {
         this.appointmentsService = appointmentsService;
     }
+    getAppointments(userId) {
+        return this.appointmentsService.getUserAppointments(userId);
+    }
     getDoctors() {
         return this.appointmentsService.getDoctors();
     }
@@ -34,6 +37,13 @@ let AppointmentsController = class AppointmentsController {
     }
 };
 exports.AppointmentsController = AppointmentsController;
+__decorate([
+    (0, common_1.Get)('list'),
+    __param(0, (0, common_1.Query)('userId')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
+], AppointmentsController.prototype, "getAppointments", null);
 __decorate([
     (0, common_1.Get)('doctors'),
     __metadata("design:type", Function),

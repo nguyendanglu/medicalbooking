@@ -39,5 +39,40 @@ export declare class AppointmentsService {
         patientPhone: string;
         reason: string;
         userId: string | null;
+        status: import("@prisma/client").$Enums.AppointmentStatus;
     }>;
+    getUserAppointments(userId: string): Promise<({
+        doctor: {
+            name: string;
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            specialty: string;
+            experience: string;
+            image: string | null;
+            rating: number | null;
+        };
+        serviceType: {
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            title: string;
+            description: string;
+            icon: string | null;
+            price: number | null;
+        };
+    } & {
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        doctorId: string;
+        serviceTypeId: string;
+        timeSlot: string;
+        date: string;
+        patientName: string;
+        patientPhone: string;
+        reason: string;
+        userId: string | null;
+        status: import("@prisma/client").$Enums.AppointmentStatus;
+    })[]>;
 }
