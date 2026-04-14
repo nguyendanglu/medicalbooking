@@ -25,3 +25,10 @@ $ npm run start:prod
 $ cd apps/portal
 $ npm run dev -- -p 3001
 ```
+
+### Frontend Admin
+
+```bash
+$ cd apps/admin
+$ npm run dev -- -p 3002
+```
