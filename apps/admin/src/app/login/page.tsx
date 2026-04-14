@@ -2,8 +2,17 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 export default function LoginPage() {
+  const router = useRouter();
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Proceed to dashboard directly for now
+    router.push('/dashboard');
+  };
+
   return (
     <div className="bg-surface text-on-surface min-h-screen flex flex-col">
       {/* TopAppBar */}
@@ -72,7 +81,7 @@ export default function LoginPage() {
                 <p className="text-on-surface-variant text-sm">Please enter your credentials to manage your clinic.</p>
               </div>
 
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleLogin}>
                 {/* Input Field: Username */}
                 <div className="space-y-2">
                   <label className="block text-sm font-semibold text-on-surface-variant px-1" htmlFor="username">
