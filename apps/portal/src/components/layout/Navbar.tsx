@@ -42,7 +42,7 @@ export const Navbar = () => {
             { name: 'Lịch Khám', href: '/appointments' },
             { name: 'Bác sĩ', href: '#' },
             { name: 'Tin tức', href: '/news' },
-            { name: 'Hồ sơ y tế', href: '/appointments' }
+            { name: 'Hồ sơ y tế', href: '/health-record' }
           ].map((item) => (
             <Link
               key={item.name}
