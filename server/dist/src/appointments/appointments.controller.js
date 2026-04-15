@@ -15,6 +15,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppointmentsController = void 0;
 const common_1 = require("@nestjs/common");
 const appointments_service_1 = require("./appointments.service");
+const jwt_auth_guard_1 = require("../auth/guards/jwt-auth.guard");
+const roles_guard_1 = require("../auth/guards/roles.guard");
+const roles_decorator_1 = require("../auth/decorators/roles.decorator");
+const client_1 = require("@prisma/client");
 let AppointmentsController = class AppointmentsController {
     appointmentsService;
     constructor(appointmentsService) {
@@ -22,6 +26,12 @@ let AppointmentsController = class AppointmentsController {
     }
     getAppointments(userId) {
         return this.appointmentsService.getUserAppointments(userId);
+    }
+    getAdminAppointments(date, doctorId, status) {
+        return this.appointmentsService.getAdminAppointments({ date, doctorId, status });
+    }
+    updateStatus(id, status) {
+        return this.appointmentsService.updateAppointmentStatus(id, status);
     }
     getDoctors() {
         return this.appointmentsService.getDoctors();
@@ -44,6 +54,27 @@ __decorate([
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
 ], AppointmentsController.prototype, "getAppointments", null);
+__decorate([
+    (0, common_1.Get)('admin'),
+    (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard, roles_guard_1.RolesGuard),
+    (0, roles_decorator_1.Roles)('ADMIN', 'STAFF', 'DOCTOR'),
+    __param(0, (0, common_1.Query)('date')),
+    __param(1, (0, common_1.Query)('doctorId')),
+    __param(2, (0, common_1.Query)('status')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, String, String]),
+    __metadata("design:returntype", void 0)
+], AppointmentsController.prototype, "getAdminAppointments", null);
+__decorate([
+    (0, common_1.Patch)(':id/status'),
+    (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard, roles_guard_1.RolesGuard),
+    (0, roles_decorator_1.Roles)('ADMIN', 'STAFF', 'DOCTOR'),
+    __param(0, (0, common_1.Param)('id')),
+    __param(1, (0, common_1.Body)('status')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, String]),
+    __metadata("design:returntype", void 0)
+], AppointmentsController.prototype, "updateStatus", null);
 __decorate([
     (0, common_1.Get)('doctors'),
     __metadata("design:type", Function),

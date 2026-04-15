@@ -48,5 +48,34 @@ export class AppointmentsService {
       },
     });
   }
+
+  async getAdminAppointments(filters: { date?: string; doctorId?: string; status?: AppointmentStatus }) {
+    const where: any = {};
+    if (filters.date) where.date = filters.date;
+    if (filters.doctorId) where.doctorId = filters.doctorId;
+    if (filters.status) where.status = filters.status;
+
+    return this.prisma.appointment.findMany({
+      where,
+      include: {
+        doctor: true,
+        serviceType: true,
+      },
+      orderBy: {
+        createdAt: 'desc',
+      },
+    });
+  }
+
+  async updateAppointmentStatus(id: string, status: AppointmentStatus) {
+    return this.prisma.appointment.update({
+      where: { id },
+      data: { status },
+      include: {
+        doctor: true,
+        serviceType: true,
+      },
+    });
+  }
 }
 

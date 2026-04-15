@@ -19,7 +19,7 @@ export default function DashboardPage() {
             <span className="material-symbols-outlined">dashboard</span>
             <span className="text-sm font-medium">Dashboard</span>
           </Link>
-          <Link href="#" className="flex items-center gap-3 px-4 py-3 rounded-full text-slate-500 dark:text-slate-400 hover:text-blue-600 hover:bg-slate-200/50 transition-colors">
+          <Link href="/appointments" className="flex items-center gap-3 px-4 py-3 rounded-full text-slate-500 dark:text-slate-400 hover:text-blue-600 hover:bg-slate-200/50 transition-colors">
             <span className="material-symbols-outlined">calendar_today</span>
             <span className="text-sm font-medium">Appointments</span>
           </Link>

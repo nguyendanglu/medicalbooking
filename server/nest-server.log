@@ -1,0 +1,801 @@
+[2J[3J[H[[90m10:40:59 AM[0m] Starting compilation in watch mode...
+
+[[90m10:41:02 AM[0m] Found 0 errors. Watching for file changes.
+
+[32m[Nest] 5444  - [39m04/15/2026, 10:41:03 AM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 5444  - [39m04/15/2026, 10:41:03 AM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPrismaModule dependencies initialized[39m[38;5;3m +20ms[39m
+[32m[Nest] 5444  - [39m04/15/2026, 10:41:03 AM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 5444  - [39m04/15/2026, 10:41:03 AM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 5444  - [39m04/15/2026, 10:41:03 AM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 5444  - [39m04/15/2026, 10:41:03 AM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 5444  - [39m04/15/2026, 10:41:03 AM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 5444  - [39m04/15/2026, 10:41:03 AM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppointmentsModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 5444  - [39m04/15/2026, 10:41:03 AM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAuthModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 5444  - [39m04/15/2026, 10:41:03 AM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAppController {/}:[39m[38;5;3m +4ms[39m
+[32m[Nest] 5444  - [39m04/15/2026, 10:41:03 AM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/, GET} route[39m[38;5;3m +3ms[39m
+[32m[Nest] 5444  - [39m04/15/2026, 10:41:03 AM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAuthController {/auth}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 5444  - [39m04/15/2026, 10:41:03 AM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/register, POST} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 5444  - [39m04/15/2026, 10:41:03 AM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/login, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 5444  - [39m04/15/2026, 10:41:03 AM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/seed-admins, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 5444  - [39m04/15/2026, 10:41:03 AM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/auth/validate, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 5444  - [39m04/15/2026, 10:41:03 AM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAppointmentsController {/appointments}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 5444  - [39m04/15/2026, 10:41:03 AM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/appointments/list, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 5444  - [39m04/15/2026, 10:41:03 AM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/appointments/admin, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 5444  - [39m04/15/2026, 10:41:03 AM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/appointments/:id/status, PATCH} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 5444  - [39m04/15/2026, 10:41:03 AM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/appointments/doctors, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 5444  - [39m04/15/2026, 10:41:03 AM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/appointments/services, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 5444  - [39m04/15/2026, 10:41:03 AM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/appointments/time-slots, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 5444  - [39m04/15/2026, 10:41:03 AM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/appointments, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 5444  - [39m04/15/2026, 10:41:04 AM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +86ms[39m
+(node:5444) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+JwtAuthGuard headers: {
+  host: '127.0.0.1:3000',
+  connection: 'keep-alive',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzOWVhNmU1OC0xZDQ3LTQyNzUtYjRmNS0yZWM4NGVjMTQ3ZTYiLCJlbWFpbCI6ImFkbWluQGNsaW5pYy5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzYyMjQ0NzIsImV4cCI6MTc3NjI2MDQ3Mn0.O6_sncZ3PnHXZXNoJb1I2kTj21_kxoGLIUDWwUcsMrE',
+  accept: '*/*',
+  'accept-language': '*',
+  'sec-fetch-mode': 'cors',
+  'user-agent': 'node',
+  'accept-encoding': 'gzip, deflate'
+}
+JwtAuthGuard: Token verified, payload: {
+  sub: '39ea6e58-1d47-4275-b4f5-2ec84ec147e6',
+  email: 'admin@clinic.com',
+  role: 'ADMIN',
+  iat: 1776224472,
+  exp: 1776260472
+}
+JwtAuthGuard headers: {
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzOWVhNmU1OC0xZDQ3LTQyNzUtYjRmNS0yZWM4NGVjMTQ3ZTYiLCJlbWFpbCI6ImFkbWluQGNsaW5pYy5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzYyMjQ0NzIsImV4cCI6MTc3NjI2MDQ3Mn0.O6_sncZ3PnHXZXNoJb1I2kTj21_kxoGLIUDWwUcsMrE',
+  host: '127.0.0.1:3000',
+  connection: 'keep-alive'
+}
+JwtAuthGuard: Token verified, payload: {
+  sub: '39ea6e58-1d47-4275-b4f5-2ec84ec147e6',
+  email: 'admin@clinic.com',
+  role: 'ADMIN',
+  iat: 1776224472,
+  exp: 1776260472
+}
+JwtAuthGuard headers: {
+  host: '127.0.0.1:3000',
+  connection: 'keep-alive',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjNjExMGVjNS05NmI0LTQ4YTAtODliMS05ZTM2YWM2ODc3MWYiLCJlbWFpbCI6ImRvY3RvckBjbGluaWMuY29tIiwicm9sZSI6IkRPQ1RPUiIsImlhdCI6MTc3NjIyMTAyMiwiZXhwIjoxNzc2MjU3MDIyfQ.fZd3ZgULu93PusYeMigCgWDTLL0lAdFCATSoSskTFvY',
+  accept: '*/*',
+  'accept-language': '*',
+  'sec-fetch-mode': 'cors',
+  'user-agent': 'node',
+  'accept-encoding': 'gzip, deflate'
+}
+JwtAuthGuard: Token verification failed: invalid signature
+JwtAuthGuard headers: {
+  host: '127.0.0.1:3000',
+  connection: 'keep-alive',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjNjExMGVjNS05NmI0LTQ4YTAtODliMS05ZTM2YWM2ODc3MWYiLCJlbWFpbCI6ImRvY3RvckBjbGluaWMuY29tIiwicm9sZSI6IkRPQ1RPUiIsImlhdCI6MTc3NjIyMTAyMiwiZXhwIjoxNzc2MjU3MDIyfQ.fZd3ZgULu93PusYeMigCgWDTLL0lAdFCATSoSskTFvY',
+  accept: '*/*',
+  'accept-language': '*',
+  'sec-fetch-mode': 'cors',
+  'user-agent': 'node',
+  'accept-encoding': 'gzip, deflate'
+}
+JwtAuthGuard: Token verification failed: invalid signature
+JwtAuthGuard headers: {
+  host: '127.0.0.1:3000',
+  connection: 'keep-alive',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzOWVhNmU1OC0xZDQ3LTQyNzUtYjRmNS0yZWM4NGVjMTQ3ZTYiLCJlbWFpbCI6ImFkbWluQGNsaW5pYy5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzYyMjY1NDYsImV4cCI6MTc3NjI2MjU0Nn0.PuIBhHWBBxK7mcxkL9bATYTRCF7M0yUid4bu-bKwrcQ',
+  accept: '*/*',
+  'accept-language': '*',
+  'sec-fetch-mode': 'cors',
+  'user-agent': 'node',
+  'accept-encoding': 'gzip, deflate'
+}
+JwtAuthGuard: Token verified, payload: {
+  sub: '39ea6e58-1d47-4275-b4f5-2ec84ec147e6',
+  email: 'admin@clinic.com',
+  role: 'ADMIN',
+  iat: 1776226546,
+  exp: 1776262546
+}
+JwtAuthGuard headers: {
+  host: '127.0.0.1:3000',
+  connection: 'keep-alive',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjNjExMGVjNS05NmI0LTQ4YTAtODliMS05ZTM2YWM2ODc3MWYiLCJlbWFpbCI6ImRvY3RvckBjbGluaWMuY29tIiwicm9sZSI6IkRPQ1RPUiIsImlhdCI6MTc3NjIyMTAyMiwiZXhwIjoxNzc2MjU3MDIyfQ.fZd3ZgULu93PusYeMigCgWDTLL0lAdFCATSoSskTFvY',
+  accept: '*/*',
+  'accept-language': '*',
+  'sec-fetch-mode': 'cors',
+  'user-agent': 'node',
+  'accept-encoding': 'gzip, deflate'
+}
+JwtAuthGuard: Token verification failed: invalid signature
+JwtAuthGuard headers: {
+  host: '127.0.0.1:3000',
+  connection: 'keep-alive',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjNjExMGVjNS05NmI0LTQ4YTAtODliMS05ZTM2YWM2ODc3MWYiLCJlbWFpbCI6ImRvY3RvckBjbGluaWMuY29tIiwicm9sZSI6IkRPQ1RPUiIsImlhdCI6MTc3NjIyMTAyMiwiZXhwIjoxNzc2MjU3MDIyfQ.fZd3ZgULu93PusYeMigCgWDTLL0lAdFCATSoSskTFvY',
+  accept: '*/*',
+  'accept-language': '*',
+  'sec-fetch-mode': 'cors',
+  'user-agent': 'node',
+  'accept-encoding': 'gzip, deflate'
+}
+JwtAuthGuard: Token verification failed: invalid signature
+JwtAuthGuard headers: {
+  host: '127.0.0.1:3000',
+  connection: 'keep-alive',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjNjExMGVjNS05NmI0LTQ4YTAtODliMS05ZTM2YWM2ODc3MWYiLCJlbWFpbCI6ImRvY3RvckBjbGluaWMuY29tIiwicm9sZSI6IkRPQ1RPUiIsImlhdCI6MTc3NjIyMTAyMiwiZXhwIjoxNzc2MjU3MDIyfQ.fZd3ZgULu93PusYeMigCgWDTLL0lAdFCATSoSskTFvY',
+  accept: '*/*',
+  'accept-language': '*',
+  'sec-fetch-mode': 'cors',
+  'user-agent': 'node',
+  'accept-encoding': 'gzip, deflate'
+}
+JwtAuthGuard: Token verification failed: invalid signature
+JwtAuthGuard headers: {
+  host: '127.0.0.1:3000',
+  connection: 'keep-alive',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjNjExMGVjNS05NmI0LTQ4YTAtODliMS05ZTM2YWM2ODc3MWYiLCJlbWFpbCI6ImRvY3RvckBjbGluaWMuY29tIiwicm9sZSI6IkRPQ1RPUiIsImlhdCI6MTc3NjIyMTAyMiwiZXhwIjoxNzc2MjU3MDIyfQ.fZd3ZgULu93PusYeMigCgWDTLL0lAdFCATSoSskTFvY',
+  accept: '*/*',
+  'accept-language': '*',
+  'sec-fetch-mode': 'cors',
+  'user-agent': 'node',
+  'accept-encoding': 'gzip, deflate'
+}
+JwtAuthGuard: Token verification failed: invalid signature
+JwtAuthGuard headers: {
+  host: '127.0.0.1:3000',
+  connection: 'keep-alive',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjNjExMGVjNS05NmI0LTQ4YTAtODliMS05ZTM2YWM2ODc3MWYiLCJlbWFpbCI6ImRvY3RvckBjbGluaWMuY29tIiwicm9sZSI6IkRPQ1RPUiIsImlhdCI6MTc3NjIyMTAyMiwiZXhwIjoxNzc2MjU3MDIyfQ.fZd3ZgULu93PusYeMigCgWDTLL0lAdFCATSoSskTFvY',
+  accept: '*/*',
+  'accept-language': '*',
+  'sec-fetch-mode': 'cors',
+  'user-agent': 'node',
+  'accept-encoding': 'gzip, deflate'
+}
+JwtAuthGuard: Token verification failed: invalid signature
+JwtAuthGuard headers: {
+  host: '127.0.0.1:3000',
+  connection: 'keep-alive',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjNjExMGVjNS05NmI0LTQ4YTAtODliMS05ZTM2YWM2ODc3MWYiLCJlbWFpbCI6ImRvY3RvckBjbGluaWMuY29tIiwicm9sZSI6IkRPQ1RPUiIsImlhdCI6MTc3NjIyMTAyMiwiZXhwIjoxNzc2MjU3MDIyfQ.fZd3ZgULu93PusYeMigCgWDTLL0lAdFCATSoSskTFvY',
+  accept: '*/*',
+  'accept-language': '*',
+  'sec-fetch-mode': 'cors',
+  'user-agent': 'node',
+  'accept-encoding': 'gzip, deflate'
+}
+JwtAuthGuard: Token verification failed: invalid signature
+JwtAuthGuard headers: {
+  host: '127.0.0.1:3000',
+  connection: 'keep-alive',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjNjExMGVjNS05NmI0LTQ4YTAtODliMS05ZTM2YWM2ODc3MWYiLCJlbWFpbCI6ImRvY3RvckBjbGluaWMuY29tIiwicm9sZSI6IkRPQ1RPUiIsImlhdCI6MTc3NjIyMTAyMiwiZXhwIjoxNzc2MjU3MDIyfQ.fZd3ZgULu93PusYeMigCgWDTLL0lAdFCATSoSskTFvY',
+  accept: '*/*',
+  'accept-language': '*',
+  'sec-fetch-mode': 'cors',
+  'user-agent': 'node',
+  'accept-encoding': 'gzip, deflate'
+}
+JwtAuthGuard: Token verification failed: invalid signature
+JwtAuthGuard headers: {
+  host: '127.0.0.1:3000',
+  connection: 'keep-alive',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjNjExMGVjNS05NmI0LTQ4YTAtODliMS05ZTM2YWM2ODc3MWYiLCJlbWFpbCI6ImRvY3RvckBjbGluaWMuY29tIiwicm9sZSI6IkRPQ1RPUiIsImlhdCI6MTc3NjIyMTAyMiwiZXhwIjoxNzc2MjU3MDIyfQ.fZd3ZgULu93PusYeMigCgWDTLL0lAdFCATSoSskTFvY',
+  accept: '*/*',
+  'accept-language': '*',
+  'sec-fetch-mode': 'cors',
+  'user-agent': 'node',
+  'accept-encoding': 'gzip, deflate'
+}
+JwtAuthGuard: Token verification failed: invalid signature
+JwtAuthGuard headers: {
+  host: '127.0.0.1:3000',
+  connection: 'keep-alive',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjNjExMGVjNS05NmI0LTQ4YTAtODliMS05ZTM2YWM2ODc3MWYiLCJlbWFpbCI6ImRvY3RvckBjbGluaWMuY29tIiwicm9sZSI6IkRPQ1RPUiIsImlhdCI6MTc3NjIyMTAyMiwiZXhwIjoxNzc2MjU3MDIyfQ.fZd3ZgULu93PusYeMigCgWDTLL0lAdFCATSoSskTFvY',
+  accept: '*/*',
+  'accept-language': '*',
+  'sec-fetch-mode': 'cors',
+  'user-agent': 'node',
+  'accept-encoding': 'gzip, deflate'
+}
+JwtAuthGuard: Token verification failed: invalid signature
+JwtAuthGuard headers: {
+  host: '127.0.0.1:3000',
+  connection: 'keep-alive',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjNjExMGVjNS05NmI0LTQ4YTAtODliMS05ZTM2YWM2ODc3MWYiLCJlbWFpbCI6ImRvY3RvckBjbGluaWMuY29tIiwicm9sZSI6IkRPQ1RPUiIsImlhdCI6MTc3NjIyMTAyMiwiZXhwIjoxNzc2MjU3MDIyfQ.fZd3ZgULu93PusYeMigCgWDTLL0lAdFCATSoSskTFvY',
+  accept: '*/*',
+  'accept-language': '*',
+  'sec-fetch-mode': 'cors',
+  'user-agent': 'node',
+  'accept-encoding': 'gzip, deflate'
+}
+JwtAuthGuard: Token verification failed: invalid signature
+JwtAuthGuard headers: {
+  host: '127.0.0.1:3000',
+  connection: 'keep-alive',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzOWVhNmU1OC0xZDQ3LTQyNzUtYjRmNS0yZWM4NGVjMTQ3ZTYiLCJlbWFpbCI6ImFkbWluQGNsaW5pYy5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzYyMjY1NDYsImV4cCI6MTc3NjI2MjU0Nn0.PuIBhHWBBxK7mcxkL9bATYTRCF7M0yUid4bu-bKwrcQ',
+  accept: '*/*',
+  'accept-language': '*',
+  'sec-fetch-mode': 'cors',
+  'user-agent': 'node',
+  'accept-encoding': 'gzip, deflate'
+}
+JwtAuthGuard: Token verified, payload: {
+  sub: '39ea6e58-1d47-4275-b4f5-2ec84ec147e6',
+  email: 'admin@clinic.com',
+  role: 'ADMIN',
+  iat: 1776226546,
+  exp: 1776262546
+}
+JwtAuthGuard headers: {
+  host: '127.0.0.1:3000',
+  connection: 'keep-alive',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzOWVhNmU1OC0xZDQ3LTQyNzUtYjRmNS0yZWM4NGVjMTQ3ZTYiLCJlbWFpbCI6ImFkbWluQGNsaW5pYy5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzYyMjc0OTEsImV4cCI6MTc3NjI2MzQ5MX0.itm_Q92QVqnKCuYxgxeI8RaNuJJc5AyVupRZkTlaVLo',
+  accept: '*/*',
+  'accept-language': '*',
+  'sec-fetch-mode': 'cors',
+  'user-agent': 'node',
+  'accept-encoding': 'gzip, deflate'
+}
+JwtAuthGuard: Token verified, payload: {
+  sub: '39ea6e58-1d47-4275-b4f5-2ec84ec147e6',
+  email: 'admin@clinic.com',
+  role: 'ADMIN',
+  iat: 1776227491,
+  exp: 1776263491
+}
+JwtAuthGuard headers: {
+  host: '127.0.0.1:3000',
+  connection: 'keep-alive',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzOWVhNmU1OC0xZDQ3LTQyNzUtYjRmNS0yZWM4NGVjMTQ3ZTYiLCJlbWFpbCI6ImFkbWluQGNsaW5pYy5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzYyMjc0OTEsImV4cCI6MTc3NjI2MzQ5MX0.itm_Q92QVqnKCuYxgxeI8RaNuJJc5AyVupRZkTlaVLo',
+  accept: '*/*',
+  'accept-language': '*',
+  'sec-fetch-mode': 'cors',
+  'user-agent': 'node',
+  'accept-encoding': 'gzip, deflate'
+}
+JwtAuthGuard: Token verified, payload: {
+  sub: '39ea6e58-1d47-4275-b4f5-2ec84ec147e6',
+  email: 'admin@clinic.com',
+  role: 'ADMIN',
+  iat: 1776227491,
+  exp: 1776263491
+}
+JwtAuthGuard headers: {
+  host: '127.0.0.1:3000',
+  connection: 'keep-alive',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzOWVhNmU1OC0xZDQ3LTQyNzUtYjRmNS0yZWM4NGVjMTQ3ZTYiLCJlbWFpbCI6ImFkbWluQGNsaW5pYy5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzYyMjc0OTEsImV4cCI6MTc3NjI2MzQ5MX0.itm_Q92QVqnKCuYxgxeI8RaNuJJc5AyVupRZkTlaVLo',
+  accept: '*/*',
+  'accept-language': '*',
+  'sec-fetch-mode': 'cors',
+  'user-agent': 'node',
+  'accept-encoding': 'gzip, deflate'
+}
+JwtAuthGuard: Token verified, payload: {
+  sub: '39ea6e58-1d47-4275-b4f5-2ec84ec147e6',
+  email: 'admin@clinic.com',
+  role: 'ADMIN',
+  iat: 1776227491,
+  exp: 1776263491
+}
+JwtAuthGuard headers: {
+  host: '127.0.0.1:3000',
+  connection: 'keep-alive',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzOWVhNmU1OC0xZDQ3LTQyNzUtYjRmNS0yZWM4NGVjMTQ3ZTYiLCJlbWFpbCI6ImFkbWluQGNsaW5pYy5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzYyMjc0OTEsImV4cCI6MTc3NjI2MzQ5MX0.itm_Q92QVqnKCuYxgxeI8RaNuJJc5AyVupRZkTlaVLo',
+  accept: '*/*',
+  'accept-language': '*',
+  'sec-fetch-mode': 'cors',
+  'user-agent': 'node',
+  'accept-encoding': 'gzip, deflate'
+}
+JwtAuthGuard: Token verified, payload: {
+  sub: '39ea6e58-1d47-4275-b4f5-2ec84ec147e6',
+  email: 'admin@clinic.com',
+  role: 'ADMIN',
+  iat: 1776227491,
+  exp: 1776263491
+}
+JwtAuthGuard headers: {
+  host: '127.0.0.1:3000',
+  connection: 'keep-alive',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzOWVhNmU1OC0xZDQ3LTQyNzUtYjRmNS0yZWM4NGVjMTQ3ZTYiLCJlbWFpbCI6ImFkbWluQGNsaW5pYy5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzYyMjc0OTEsImV4cCI6MTc3NjI2MzQ5MX0.itm_Q92QVqnKCuYxgxeI8RaNuJJc5AyVupRZkTlaVLo',
+  accept: '*/*',
+  'accept-language': '*',
+  'sec-fetch-mode': 'cors',
+  'user-agent': 'node',
+  'accept-encoding': 'gzip, deflate'
+}
+JwtAuthGuard: Token verified, payload: {
+  sub: '39ea6e58-1d47-4275-b4f5-2ec84ec147e6',
+  email: 'admin@clinic.com',
+  role: 'ADMIN',
+  iat: 1776227491,
+  exp: 1776263491
+}
+JwtAuthGuard headers: {
+  host: '127.0.0.1:3000',
+  connection: 'keep-alive',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzOWVhNmU1OC0xZDQ3LTQyNzUtYjRmNS0yZWM4NGVjMTQ3ZTYiLCJlbWFpbCI6ImFkbWluQGNsaW5pYy5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzYyMjc0OTEsImV4cCI6MTc3NjI2MzQ5MX0.itm_Q92QVqnKCuYxgxeI8RaNuJJc5AyVupRZkTlaVLo',
+  accept: '*/*',
+  'accept-language': '*',
+  'sec-fetch-mode': 'cors',
+  'user-agent': 'node',
+  'accept-encoding': 'gzip, deflate'
+}
+JwtAuthGuard: Token verified, payload: {
+  sub: '39ea6e58-1d47-4275-b4f5-2ec84ec147e6',
+  email: 'admin@clinic.com',
+  role: 'ADMIN',
+  iat: 1776227491,
+  exp: 1776263491
+}
+JwtAuthGuard headers: {
+  host: '127.0.0.1:3000',
+  connection: 'keep-alive',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzOWVhNmU1OC0xZDQ3LTQyNzUtYjRmNS0yZWM4NGVjMTQ3ZTYiLCJlbWFpbCI6ImFkbWluQGNsaW5pYy5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzYyMjc0OTEsImV4cCI6MTc3NjI2MzQ5MX0.itm_Q92QVqnKCuYxgxeI8RaNuJJc5AyVupRZkTlaVLo',
+  accept: '*/*',
+  'accept-language': '*',
+  'sec-fetch-mode': 'cors',
+  'user-agent': 'node',
+  'accept-encoding': 'gzip, deflate'
+}
+JwtAuthGuard: Token verified, payload: {
+  sub: '39ea6e58-1d47-4275-b4f5-2ec84ec147e6',
+  email: 'admin@clinic.com',
+  role: 'ADMIN',
+  iat: 1776227491,
+  exp: 1776263491
+}
+[31m[Nest] 5444  - [39m04/15/2026, 11:35:13 AM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39mPrismaClientValidationError: 
+Invalid `this.prisma.appointment.findMany()` invocation in
+/Users/bap/Documents/MedicalBooking/server/src/appointments/appointments.service.ts:58:36
+
+  55 if (filters.doctorId) where.doctorId = filters.doctorId;
+  56 if (filters.status) where.status = filters.status;
+  57 
+→ 58 return this.prisma.appointment.findMany({
+       where: {
+         status: "IN-PROGRESS"
+                 ~~~~~~~~~~~~~
+       },
+       include: {
+         doctor: true,
+         serviceType: true
+       },
+       orderBy: {
+         createdAt: "desc"
+       }
+     })
+
+Invalid value for argument `status`. Expected AppointmentStatus.
+    at throwValidationException [90m(/Users/bap/Documents/MedicalBooking/server/[39mnode_modules/[4m@prisma/client[24m/src/runtime/core/errorRendering/throwValidationException.ts:46:9[90m)[39m
+    at Gr.handleRequestError [90m(/Users/bap/Documents/MedicalBooking/server/[39mnode_modules/[4m@prisma/client[24m/src/runtime/RequestHandler.ts:211:7[90m)[39m
+    at Gr.handleAndLogRequestError [90m(/Users/bap/Documents/MedicalBooking/server/[39mnode_modules/[4m@prisma/client[24m/src/runtime/RequestHandler.ts:183:12[90m)[39m
+    at Gr.request [90m(/Users/bap/Documents/MedicalBooking/server/[39mnode_modules/[4m@prisma/client[24m/src/runtime/RequestHandler.ts:152:12[90m)[39m
+[90m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+    at async a [90m(/Users/bap/Documents/MedicalBooking/server/[39mnode_modules/[4m@prisma/client[24m/src/runtime/getPrismaClient.ts:938:24[90m)[39m
+    at async [90m/Users/bap/Documents/MedicalBooking/server/[39mnode_modules/[4m@nestjs/core[24m/router/router-execution-context.js:46:28
+    at async [90m/Users/bap/Documents/MedicalBooking/server/[39mnode_modules/[4m@nestjs/core[24m/router/router-proxy.js:9:17 {
+  clientVersion: [32m'7.6.0'[39m
+}
+JwtAuthGuard headers: {
+  host: '127.0.0.1:3000',
+  connection: 'keep-alive',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzOWVhNmU1OC0xZDQ3LTQyNzUtYjRmNS0yZWM4NGVjMTQ3ZTYiLCJlbWFpbCI6ImFkbWluQGNsaW5pYy5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzYyMjc0OTEsImV4cCI6MTc3NjI2MzQ5MX0.itm_Q92QVqnKCuYxgxeI8RaNuJJc5AyVupRZkTlaVLo',
+  accept: '*/*',
+  'accept-language': '*',
+  'sec-fetch-mode': 'cors',
+  'user-agent': 'node',
+  'accept-encoding': 'gzip, deflate'
+}
+JwtAuthGuard: Token verified, payload: {
+  sub: '39ea6e58-1d47-4275-b4f5-2ec84ec147e6',
+  email: 'admin@clinic.com',
+  role: 'ADMIN',
+  iat: 1776227491,
+  exp: 1776263491
+}
+JwtAuthGuard headers: {
+  host: '127.0.0.1:3000',
+  connection: 'keep-alive',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzOWVhNmU1OC0xZDQ3LTQyNzUtYjRmNS0yZWM4NGVjMTQ3ZTYiLCJlbWFpbCI6ImFkbWluQGNsaW5pYy5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzYyMjc0OTEsImV4cCI6MTc3NjI2MzQ5MX0.itm_Q92QVqnKCuYxgxeI8RaNuJJc5AyVupRZkTlaVLo',
+  accept: '*/*',
+  'accept-language': '*',
+  'sec-fetch-mode': 'cors',
+  'user-agent': 'node',
+  'accept-encoding': 'gzip, deflate'
+}
+JwtAuthGuard: Token verified, payload: {
+  sub: '39ea6e58-1d47-4275-b4f5-2ec84ec147e6',
+  email: 'admin@clinic.com',
+  role: 'ADMIN',
+  iat: 1776227491,
+  exp: 1776263491
+}
+[31m[Nest] 5444  - [39m04/15/2026, 11:35:24 AM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39mPrismaClientValidationError: 
+Invalid `this.prisma.appointment.findMany()` invocation in
+/Users/bap/Documents/MedicalBooking/server/src/appointments/appointments.service.ts:58:36
+
+  55 if (filters.doctorId) where.doctorId = filters.doctorId;
+  56 if (filters.status) where.status = filters.status;
+  57 
+→ 58 return this.prisma.appointment.findMany({
+       where: {
+         status: "IN-PROGRESS"
+                 ~~~~~~~~~~~~~
+       },
+       include: {
+         doctor: true,
+         serviceType: true
+       },
+       orderBy: {
+         createdAt: "desc"
+       }
+     })
+
+Invalid value for argument `status`. Expected AppointmentStatus.
+    at throwValidationException [90m(/Users/bap/Documents/MedicalBooking/server/[39mnode_modules/[4m@prisma/client[24m/src/runtime/core/errorRendering/throwValidationException.ts:46:9[90m)[39m
+    at Gr.handleRequestError [90m(/Users/bap/Documents/MedicalBooking/server/[39mnode_modules/[4m@prisma/client[24m/src/runtime/RequestHandler.ts:211:7[90m)[39m
+    at Gr.handleAndLogRequestError [90m(/Users/bap/Documents/MedicalBooking/server/[39mnode_modules/[4m@prisma/client[24m/src/runtime/RequestHandler.ts:183:12[90m)[39m
+    at Gr.request [90m(/Users/bap/Documents/MedicalBooking/server/[39mnode_modules/[4m@prisma/client[24m/src/runtime/RequestHandler.ts:152:12[90m)[39m
+[90m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+    at async a [90m(/Users/bap/Documents/MedicalBooking/server/[39mnode_modules/[4m@prisma/client[24m/src/runtime/getPrismaClient.ts:938:24[90m)[39m
+    at async [90m/Users/bap/Documents/MedicalBooking/server/[39mnode_modules/[4m@nestjs/core[24m/router/router-execution-context.js:46:28
+    at async [90m/Users/bap/Documents/MedicalBooking/server/[39mnode_modules/[4m@nestjs/core[24m/router/router-proxy.js:9:17 {
+  clientVersion: [32m'7.6.0'[39m
+}
+JwtAuthGuard headers: {
+  host: '127.0.0.1:3000',
+  connection: 'keep-alive',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzOWVhNmU1OC0xZDQ3LTQyNzUtYjRmNS0yZWM4NGVjMTQ3ZTYiLCJlbWFpbCI6ImFkbWluQGNsaW5pYy5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzYyMjc0OTEsImV4cCI6MTc3NjI2MzQ5MX0.itm_Q92QVqnKCuYxgxeI8RaNuJJc5AyVupRZkTlaVLo',
+  accept: '*/*',
+  'accept-language': '*',
+  'sec-fetch-mode': 'cors',
+  'user-agent': 'node',
+  'accept-encoding': 'gzip, deflate'
+}
+JwtAuthGuard: Token verified, payload: {
+  sub: '39ea6e58-1d47-4275-b4f5-2ec84ec147e6',
+  email: 'admin@clinic.com',
+  role: 'ADMIN',
+  iat: 1776227491,
+  exp: 1776263491
+}
+JwtAuthGuard headers: {
+  host: '127.0.0.1:3000',
+  connection: 'keep-alive',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzOWVhNmU1OC0xZDQ3LTQyNzUtYjRmNS0yZWM4NGVjMTQ3ZTYiLCJlbWFpbCI6ImFkbWluQGNsaW5pYy5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzYyMjc0OTEsImV4cCI6MTc3NjI2MzQ5MX0.itm_Q92QVqnKCuYxgxeI8RaNuJJc5AyVupRZkTlaVLo',
+  accept: '*/*',
+  'accept-language': '*',
+  'sec-fetch-mode': 'cors',
+  'user-agent': 'node',
+  'accept-encoding': 'gzip, deflate'
+}
+JwtAuthGuard: Token verified, payload: {
+  sub: '39ea6e58-1d47-4275-b4f5-2ec84ec147e6',
+  email: 'admin@clinic.com',
+  role: 'ADMIN',
+  iat: 1776227491,
+  exp: 1776263491
+}
+JwtAuthGuard headers: {
+  host: '127.0.0.1:3000',
+  connection: 'keep-alive',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzOWVhNmU1OC0xZDQ3LTQyNzUtYjRmNS0yZWM4NGVjMTQ3ZTYiLCJlbWFpbCI6ImFkbWluQGNsaW5pYy5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzYyMjc0OTEsImV4cCI6MTc3NjI2MzQ5MX0.itm_Q92QVqnKCuYxgxeI8RaNuJJc5AyVupRZkTlaVLo',
+  accept: '*/*',
+  'accept-language': '*',
+  'sec-fetch-mode': 'cors',
+  'user-agent': 'node',
+  'accept-encoding': 'gzip, deflate'
+}
+JwtAuthGuard: Token verified, payload: {
+  sub: '39ea6e58-1d47-4275-b4f5-2ec84ec147e6',
+  email: 'admin@clinic.com',
+  role: 'ADMIN',
+  iat: 1776227491,
+  exp: 1776263491
+}
+[31m[Nest] 5444  - [39m04/15/2026, 11:35:40 AM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39mPrismaClientValidationError: 
+Invalid `this.prisma.appointment.findMany()` invocation in
+/Users/bap/Documents/MedicalBooking/server/src/appointments/appointments.service.ts:58:36
+
+  55 if (filters.doctorId) where.doctorId = filters.doctorId;
+  56 if (filters.status) where.status = filters.status;
+  57 
+→ 58 return this.prisma.appointment.findMany({
+       where: {
+         status: "IN-PROGRESS"
+                 ~~~~~~~~~~~~~
+       },
+       include: {
+         doctor: true,
+         serviceType: true
+       },
+       orderBy: {
+         createdAt: "desc"
+       }
+     })
+
+Invalid value for argument `status`. Expected AppointmentStatus.
+    at throwValidationException [90m(/Users/bap/Documents/MedicalBooking/server/[39mnode_modules/[4m@prisma/client[24m/src/runtime/core/errorRendering/throwValidationException.ts:46:9[90m)[39m
+    at Gr.handleRequestError [90m(/Users/bap/Documents/MedicalBooking/server/[39mnode_modules/[4m@prisma/client[24m/src/runtime/RequestHandler.ts:211:7[90m)[39m
+    at Gr.handleAndLogRequestError [90m(/Users/bap/Documents/MedicalBooking/server/[39mnode_modules/[4m@prisma/client[24m/src/runtime/RequestHandler.ts:183:12[90m)[39m
+    at Gr.request [90m(/Users/bap/Documents/MedicalBooking/server/[39mnode_modules/[4m@prisma/client[24m/src/runtime/RequestHandler.ts:152:12[90m)[39m
+[90m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+    at async a [90m(/Users/bap/Documents/MedicalBooking/server/[39mnode_modules/[4m@prisma/client[24m/src/runtime/getPrismaClient.ts:938:24[90m)[39m
+    at async [90m/Users/bap/Documents/MedicalBooking/server/[39mnode_modules/[4m@nestjs/core[24m/router/router-execution-context.js:46:28
+    at async [90m/Users/bap/Documents/MedicalBooking/server/[39mnode_modules/[4m@nestjs/core[24m/router/router-proxy.js:9:17 {
+  clientVersion: [32m'7.6.0'[39m
+}
+JwtAuthGuard headers: {
+  host: '127.0.0.1:3000',
+  connection: 'keep-alive',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzOWVhNmU1OC0xZDQ3LTQyNzUtYjRmNS0yZWM4NGVjMTQ3ZTYiLCJlbWFpbCI6ImFkbWluQGNsaW5pYy5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzYyMjc0OTEsImV4cCI6MTc3NjI2MzQ5MX0.itm_Q92QVqnKCuYxgxeI8RaNuJJc5AyVupRZkTlaVLo',
+  accept: '*/*',
+  'accept-language': '*',
+  'sec-fetch-mode': 'cors',
+  'user-agent': 'node',
+  'accept-encoding': 'gzip, deflate'
+}
+JwtAuthGuard: Token verified, payload: {
+  sub: '39ea6e58-1d47-4275-b4f5-2ec84ec147e6',
+  email: 'admin@clinic.com',
+  role: 'ADMIN',
+  iat: 1776227491,
+  exp: 1776263491
+}
+JwtAuthGuard headers: {
+  host: '127.0.0.1:3000',
+  connection: 'keep-alive',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzOWVhNmU1OC0xZDQ3LTQyNzUtYjRmNS0yZWM4NGVjMTQ3ZTYiLCJlbWFpbCI6ImFkbWluQGNsaW5pYy5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzYyMjc0OTEsImV4cCI6MTc3NjI2MzQ5MX0.itm_Q92QVqnKCuYxgxeI8RaNuJJc5AyVupRZkTlaVLo',
+  accept: '*/*',
+  'accept-language': '*',
+  'sec-fetch-mode': 'cors',
+  'user-agent': 'node',
+  'accept-encoding': 'gzip, deflate'
+}
+JwtAuthGuard: Token verified, payload: {
+  sub: '39ea6e58-1d47-4275-b4f5-2ec84ec147e6',
+  email: 'admin@clinic.com',
+  role: 'ADMIN',
+  iat: 1776227491,
+  exp: 1776263491
+}
+[31m[Nest] 5444  - [39m04/15/2026, 11:36:01 AM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39mPrismaClientValidationError: 
+Invalid `this.prisma.appointment.findMany()` invocation in
+/Users/bap/Documents/MedicalBooking/server/src/appointments/appointments.service.ts:58:36
+
+  55 if (filters.doctorId) where.doctorId = filters.doctorId;
+  56 if (filters.status) where.status = filters.status;
+  57 
+→ 58 return this.prisma.appointment.findMany({
+       where: {
+         status: "IN-PROGRESS"
+                 ~~~~~~~~~~~~~
+       },
+       include: {
+         doctor: true,
+         serviceType: true
+       },
+       orderBy: {
+         createdAt: "desc"
+       }
+     })
+
+Invalid value for argument `status`. Expected AppointmentStatus.
+    at throwValidationException [90m(/Users/bap/Documents/MedicalBooking/server/[39mnode_modules/[4m@prisma/client[24m/src/runtime/core/errorRendering/throwValidationException.ts:46:9[90m)[39m
+    at Gr.handleRequestError [90m(/Users/bap/Documents/MedicalBooking/server/[39mnode_modules/[4m@prisma/client[24m/src/runtime/RequestHandler.ts:211:7[90m)[39m
+    at Gr.handleAndLogRequestError [90m(/Users/bap/Documents/MedicalBooking/server/[39mnode_modules/[4m@prisma/client[24m/src/runtime/RequestHandler.ts:183:12[90m)[39m
+    at Gr.request [90m(/Users/bap/Documents/MedicalBooking/server/[39mnode_modules/[4m@prisma/client[24m/src/runtime/RequestHandler.ts:152:12[90m)[39m
+[90m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+    at async a [90m(/Users/bap/Documents/MedicalBooking/server/[39mnode_modules/[4m@prisma/client[24m/src/runtime/getPrismaClient.ts:938:24[90m)[39m
+    at async [90m/Users/bap/Documents/MedicalBooking/server/[39mnode_modules/[4m@nestjs/core[24m/router/router-execution-context.js:46:28
+    at async [90m/Users/bap/Documents/MedicalBooking/server/[39mnode_modules/[4m@nestjs/core[24m/router/router-proxy.js:9:17 {
+  clientVersion: [32m'7.6.0'[39m
+}
+JwtAuthGuard headers: {
+  host: '127.0.0.1:3000',
+  connection: 'keep-alive',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzOWVhNmU1OC0xZDQ3LTQyNzUtYjRmNS0yZWM4NGVjMTQ3ZTYiLCJlbWFpbCI6ImFkbWluQGNsaW5pYy5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzYyMjc0OTEsImV4cCI6MTc3NjI2MzQ5MX0.itm_Q92QVqnKCuYxgxeI8RaNuJJc5AyVupRZkTlaVLo',
+  accept: '*/*',
+  'accept-language': '*',
+  'sec-fetch-mode': 'cors',
+  'user-agent': 'node',
+  'accept-encoding': 'gzip, deflate'
+}
+JwtAuthGuard: Token verified, payload: {
+  sub: '39ea6e58-1d47-4275-b4f5-2ec84ec147e6',
+  email: 'admin@clinic.com',
+  role: 'ADMIN',
+  iat: 1776227491,
+  exp: 1776263491
+}
+JwtAuthGuard headers: {
+  host: '127.0.0.1:3000',
+  connection: 'keep-alive',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzOWVhNmU1OC0xZDQ3LTQyNzUtYjRmNS0yZWM4NGVjMTQ3ZTYiLCJlbWFpbCI6ImFkbWluQGNsaW5pYy5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzYyMjc0OTEsImV4cCI6MTc3NjI2MzQ5MX0.itm_Q92QVqnKCuYxgxeI8RaNuJJc5AyVupRZkTlaVLo',
+  accept: '*/*',
+  'accept-language': '*',
+  'sec-fetch-mode': 'cors',
+  'user-agent': 'node',
+  'accept-encoding': 'gzip, deflate'
+}
+JwtAuthGuard: Token verified, payload: {
+  sub: '39ea6e58-1d47-4275-b4f5-2ec84ec147e6',
+  email: 'admin@clinic.com',
+  role: 'ADMIN',
+  iat: 1776227491,
+  exp: 1776263491
+}
+JwtAuthGuard headers: {
+  host: '127.0.0.1:3000',
+  connection: 'keep-alive',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzOWVhNmU1OC0xZDQ3LTQyNzUtYjRmNS0yZWM4NGVjMTQ3ZTYiLCJlbWFpbCI6ImFkbWluQGNsaW5pYy5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzYyMjc0OTEsImV4cCI6MTc3NjI2MzQ5MX0.itm_Q92QVqnKCuYxgxeI8RaNuJJc5AyVupRZkTlaVLo',
+  accept: '*/*',
+  'accept-language': '*',
+  'sec-fetch-mode': 'cors',
+  'user-agent': 'node',
+  'accept-encoding': 'gzip, deflate'
+}
+JwtAuthGuard: Token verified, payload: {
+  sub: '39ea6e58-1d47-4275-b4f5-2ec84ec147e6',
+  email: 'admin@clinic.com',
+  role: 'ADMIN',
+  iat: 1776227491,
+  exp: 1776263491
+}
+[31m[Nest] 5444  - [39m04/15/2026, 11:36:35 AM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39mPrismaClientValidationError: 
+Invalid `this.prisma.appointment.findMany()` invocation in
+/Users/bap/Documents/MedicalBooking/server/src/appointments/appointments.service.ts:58:36
+
+  55 if (filters.doctorId) where.doctorId = filters.doctorId;
+  56 if (filters.status) where.status = filters.status;
+  57 
+→ 58 return this.prisma.appointment.findMany({
+       where: {
+         status: "IN-PROGRESS"
+                 ~~~~~~~~~~~~~
+       },
+       include: {
+         doctor: true,
+         serviceType: true
+       },
+       orderBy: {
+         createdAt: "desc"
+       }
+     })
+
+Invalid value for argument `status`. Expected AppointmentStatus.
+    at throwValidationException [90m(/Users/bap/Documents/MedicalBooking/server/[39mnode_modules/[4m@prisma/client[24m/src/runtime/core/errorRendering/throwValidationException.ts:46:9[90m)[39m
+    at Gr.handleRequestError [90m(/Users/bap/Documents/MedicalBooking/server/[39mnode_modules/[4m@prisma/client[24m/src/runtime/RequestHandler.ts:211:7[90m)[39m
+    at Gr.handleAndLogRequestError [90m(/Users/bap/Documents/MedicalBooking/server/[39mnode_modules/[4m@prisma/client[24m/src/runtime/RequestHandler.ts:183:12[90m)[39m
+    at Gr.request [90m(/Users/bap/Documents/MedicalBooking/server/[39mnode_modules/[4m@prisma/client[24m/src/runtime/RequestHandler.ts:152:12[90m)[39m
+[90m    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+    at async a [90m(/Users/bap/Documents/MedicalBooking/server/[39mnode_modules/[4m@prisma/client[24m/src/runtime/getPrismaClient.ts:938:24[90m)[39m
+    at async [90m/Users/bap/Documents/MedicalBooking/server/[39mnode_modules/[4m@nestjs/core[24m/router/router-execution-context.js:46:28
+    at async [90m/Users/bap/Documents/MedicalBooking/server/[39mnode_modules/[4m@nestjs/core[24m/router/router-proxy.js:9:17 {
+  clientVersion: [32m'7.6.0'[39m
+}
+JwtAuthGuard headers: {
+  host: '127.0.0.1:3000',
+  connection: 'keep-alive',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzOWVhNmU1OC0xZDQ3LTQyNzUtYjRmNS0yZWM4NGVjMTQ3ZTYiLCJlbWFpbCI6ImFkbWluQGNsaW5pYy5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzYyMjc0OTEsImV4cCI6MTc3NjI2MzQ5MX0.itm_Q92QVqnKCuYxgxeI8RaNuJJc5AyVupRZkTlaVLo',
+  accept: '*/*',
+  'accept-language': '*',
+  'sec-fetch-mode': 'cors',
+  'user-agent': 'node',
+  'accept-encoding': 'gzip, deflate'
+}
+JwtAuthGuard: Token verified, payload: {
+  sub: '39ea6e58-1d47-4275-b4f5-2ec84ec147e6',
+  email: 'admin@clinic.com',
+  role: 'ADMIN',
+  iat: 1776227491,
+  exp: 1776263491
+}
+JwtAuthGuard headers: {
+  host: '127.0.0.1:3000',
+  connection: 'keep-alive',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzOWVhNmU1OC0xZDQ3LTQyNzUtYjRmNS0yZWM4NGVjMTQ3ZTYiLCJlbWFpbCI6ImFkbWluQGNsaW5pYy5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzYyMjc0OTEsImV4cCI6MTc3NjI2MzQ5MX0.itm_Q92QVqnKCuYxgxeI8RaNuJJc5AyVupRZkTlaVLo',
+  accept: '*/*',
+  'accept-language': '*',
+  'sec-fetch-mode': 'cors',
+  'user-agent': 'node',
+  'accept-encoding': 'gzip, deflate'
+}
+JwtAuthGuard: Token verified, payload: {
+  sub: '39ea6e58-1d47-4275-b4f5-2ec84ec147e6',
+  email: 'admin@clinic.com',
+  role: 'ADMIN',
+  iat: 1776227491,
+  exp: 1776263491
+}
+JwtAuthGuard headers: {
+  host: '127.0.0.1:3000',
+  connection: 'keep-alive',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzOWVhNmU1OC0xZDQ3LTQyNzUtYjRmNS0yZWM4NGVjMTQ3ZTYiLCJlbWFpbCI6ImFkbWluQGNsaW5pYy5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzYyMjc0OTEsImV4cCI6MTc3NjI2MzQ5MX0.itm_Q92QVqnKCuYxgxeI8RaNuJJc5AyVupRZkTlaVLo',
+  accept: '*/*',
+  'accept-language': '*',
+  'sec-fetch-mode': 'cors',
+  'user-agent': 'node',
+  'accept-encoding': 'gzip, deflate'
+}
+JwtAuthGuard: Token verified, payload: {
+  sub: '39ea6e58-1d47-4275-b4f5-2ec84ec147e6',
+  email: 'admin@clinic.com',
+  role: 'ADMIN',
+  iat: 1776227491,
+  exp: 1776263491
+}
+JwtAuthGuard headers: {
+  host: '127.0.0.1:3000',
+  connection: 'keep-alive',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzOWVhNmU1OC0xZDQ3LTQyNzUtYjRmNS0yZWM4NGVjMTQ3ZTYiLCJlbWFpbCI6ImFkbWluQGNsaW5pYy5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzYyMjc0OTEsImV4cCI6MTc3NjI2MzQ5MX0.itm_Q92QVqnKCuYxgxeI8RaNuJJc5AyVupRZkTlaVLo',
+  accept: '*/*',
+  'accept-language': '*',
+  'sec-fetch-mode': 'cors',
+  'user-agent': 'node',
+  'accept-encoding': 'gzip, deflate'
+}
+JwtAuthGuard: Token verified, payload: {
+  sub: '39ea6e58-1d47-4275-b4f5-2ec84ec147e6',
+  email: 'admin@clinic.com',
+  role: 'ADMIN',
+  iat: 1776227491,
+  exp: 1776263491
+}
+JwtAuthGuard headers: {
+  host: '127.0.0.1:3000',
+  connection: 'keep-alive',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzOWVhNmU1OC0xZDQ3LTQyNzUtYjRmNS0yZWM4NGVjMTQ3ZTYiLCJlbWFpbCI6ImFkbWluQGNsaW5pYy5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzYyMjc0OTEsImV4cCI6MTc3NjI2MzQ5MX0.itm_Q92QVqnKCuYxgxeI8RaNuJJc5AyVupRZkTlaVLo',
+  accept: '*/*',
+  'accept-language': '*',
+  'sec-fetch-mode': 'cors',
+  'user-agent': 'node',
+  'accept-encoding': 'gzip, deflate'
+}
+JwtAuthGuard: Token verified, payload: {
+  sub: '39ea6e58-1d47-4275-b4f5-2ec84ec147e6',
+  email: 'admin@clinic.com',
+  role: 'ADMIN',
+  iat: 1776227491,
+  exp: 1776263491
+}
+JwtAuthGuard headers: {
+  host: '127.0.0.1:3000',
+  connection: 'keep-alive',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzOWVhNmU1OC0xZDQ3LTQyNzUtYjRmNS0yZWM4NGVjMTQ3ZTYiLCJlbWFpbCI6ImFkbWluQGNsaW5pYy5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzYyMjc0OTEsImV4cCI6MTc3NjI2MzQ5MX0.itm_Q92QVqnKCuYxgxeI8RaNuJJc5AyVupRZkTlaVLo',
+  accept: '*/*',
+  'accept-language': '*',
+  'sec-fetch-mode': 'cors',
+  'user-agent': 'node',
+  'accept-encoding': 'gzip, deflate'
+}
+JwtAuthGuard: Token verified, payload: {
+  sub: '39ea6e58-1d47-4275-b4f5-2ec84ec147e6',
+  email: 'admin@clinic.com',
+  role: 'ADMIN',
+  iat: 1776227491,
+  exp: 1776263491
+}
+JwtAuthGuard headers: {
+  host: '127.0.0.1:3000',
+  connection: 'keep-alive',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzOWVhNmU1OC0xZDQ3LTQyNzUtYjRmNS0yZWM4NGVjMTQ3ZTYiLCJlbWFpbCI6ImFkbWluQGNsaW5pYy5jb20iLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NzYyMjc0OTEsImV4cCI6MTc3NjI2MzQ5MX0.itm_Q92QVqnKCuYxgxeI8RaNuJJc5AyVupRZkTlaVLo',
+  accept: '*/*',
+  'accept-language': '*',
+  'sec-fetch-mode': 'cors',
+  'user-agent': 'node',
+  'accept-encoding': 'gzip, deflate'
+}
+JwtAuthGuard: Token verified, payload: {
+  sub: '39ea6e58-1d47-4275-b4f5-2ec84ec147e6',
+  email: 'admin@clinic.com',
+  role: 'ADMIN',
+  iat: 1776227491,
+  exp: 1776263491
+}
