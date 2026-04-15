@@ -1,16 +1,41 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 export default function LoginPage() {
   const router = useRouter();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Proceed to dashboard directly for now
-    router.push('/dashboard');
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      const res = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
+      });
+
+      if (!res.ok) {
+        if (res.status === 429) {
+          throw new Error('Too many failed attempts. Please try again in 10 minutes.');
+        }
+        throw new Error('Invalid credentials');
+      }
+
+      router.push('/dashboard');
+    } catch (err: any) {
+      setError(err.message || 'An error occurred during login');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -82,6 +107,13 @@ export default function LoginPage() {
               </div>
 
               <form className="space-y-6" onSubmit={handleLogin}>
+                {/* Error Message */}
+                {error && (
+                  <div className="bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 p-3 rounded-md text-sm border border-red-200 dark:border-red-900/50">
+                    {error}
+                  </div>
+                )}
+
                 {/* Input Field: Username */}
                 <div className="space-y-2">
                   <label className="block text-sm font-semibold text-on-surface-variant px-1" htmlFor="username">
@@ -93,8 +125,12 @@ export default function LoginPage() {
                       className="w-full pl-12 pr-4 py-4 bg-surface-container-low border-none rounded-md focus:ring-2 focus:ring-primary/30 transition-all text-on-surface placeholder:text-outline/50" 
                       id="username" 
                       name="username" 
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       placeholder="admin@aurahealth.com" 
                       type="text"
+                      required
+                      disabled={isLoading}
                     />
                   </div>
                 </div>
@@ -105,7 +141,7 @@ export default function LoginPage() {
                     <label className="text-sm font-semibold text-on-surface-variant" htmlFor="password">
                       Password
                     </label>
-                    <Link className="text-xs font-semibold text-primary hover:text-primary-container transition-colors" href="#">
+                    <Link className="text-xs font-semibold text-primary hover:text-primary-container transition-colors" href="/reset-password">
                       Forgot Password?
                     </Link>
                   </div>
@@ -115,8 +151,12 @@ export default function LoginPage() {
                       className="w-full pl-12 pr-4 py-4 bg-surface-container-low border-none rounded-md focus:ring-2 focus:ring-primary/30 transition-all text-on-surface placeholder:text-outline/50" 
                       id="password" 
                       name="password" 
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
                       placeholder="••••••••" 
                       type="password"
+                      required
+                      disabled={isLoading}
                     />
                   </div>
                 </div>
@@ -128,6 +168,7 @@ export default function LoginPage() {
                     id="remember" 
                     name="remember" 
                     type="checkbox"
+                    disabled={isLoading}
                   />
                   <label className="text-sm text-secondary font-medium" htmlFor="remember">
                     Remember this session
@@ -137,10 +178,15 @@ export default function LoginPage() {
                 {/* Submit Button */}
                 <div className="pt-4">
                   <button 
-                    className="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary py-4 rounded-full font-bold text-base shadow-lg shadow-primary/20 active:scale-[0.98] transition-all hover:brightness-110" 
+                    className="w-full bg-gradient-to-br from-primary to-primary-container text-on-primary py-4 rounded-full font-bold text-base shadow-lg shadow-primary/20 active:scale-[0.98] transition-all hover:brightness-110 disabled:opacity-70 disabled:active:scale-100 flex items-center justify-center" 
                     type="submit"
+                    disabled={isLoading}
                   >
-                    Sign In to Dashboard
+                    {isLoading ? (
+                      <span className="material-symbols-outlined animate-spin text-[24px]">progress_activity</span>
+                    ) : (
+                      'Sign In to Dashboard'
+                    )}
                   </button>
                 </div>
               </form>

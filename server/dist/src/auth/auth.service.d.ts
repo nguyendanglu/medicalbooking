@@ -1,7 +1,9 @@
 import { PrismaService } from '../prisma/prisma.service';
+import { JwtService } from '@nestjs/jwt';
 export declare class AuthService {
     private prisma;
-    constructor(prisma: PrismaService);
+    private jwtService;
+    constructor(prisma: PrismaService, jwtService: JwtService);
     register(data: any): Promise<{
         id: string;
         email: string;
@@ -20,5 +22,6 @@ export declare class AuthService {
             createdAt: Date;
             updatedAt: Date;
         };
+        accessToken: string;
     }>;
 }

@@ -20,5 +20,6 @@ export declare class AuthController {
             createdAt: Date;
             updatedAt: Date;
         };
+        accessToken: string;
     }>;
 }
