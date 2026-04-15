@@ -24,10 +24,10 @@ export default function LoginPage() {
       });
 
       if (!res.ok) {
-        if (res.status === 429) {
-          throw new Error('Too many failed attempts. Please try again in 10 minutes.');
-        }
-        throw new Error('Invalid credentials');
+        let msg = 'Invalid credentials';
+        try { const data = await res.json(); if (data.error) msg = data.error; } catch(e){}
+        if (res.status === 429) msg = 'Too many failed attempts. Please try again in 10 minutes.';
+        throw new Error(msg);
       }
 
       router.push('/dashboard');

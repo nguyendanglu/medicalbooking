@@ -22,4 +22,12 @@ export declare class AuthController {
         };
         accessToken: string;
     }>;
+    seedAdmins(): Promise<{
+        message: string;
+        createdUsers: string[];
+    }>;
+    validateAdminRoute(authHeader: string): Promise<{
+        valid: boolean;
+        user: any;
+    }>;
 }

@@ -13,21 +13,26 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Account locked' }, { status: 429 });
     }
 
-    const backendUrl = process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3001';
-    
+    const backendUrl = process.env.NEXT_PUBLIC_BACKEND_HOME_URL || 'http://127.0.0.1:3000';
+    console.log(`Attempting login at: ${backendUrl}/auth/login for ${email}`);
+
     // Call the NestJS backend
     const res = await fetch(`${backendUrl}/auth/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password }),
+    }).catch(err => {
+      console.error('Fetch to backend failed:', err);
+      throw new Error(`Connection to backend failed: ${err.message}`);
     });
 
     if (!res.ok) {
+      const errorText = await res.text();
+      console.error(`Backend returned ${res.status}: ${errorText}`);
       if (res.status === 401) {
-        // Increment attempts
         attemptInfo.count += 1;
         if (attemptInfo.count >= 5) {
-          attemptInfo.lockedUntil = Date.now() + 10 * 60 * 1000; // 10 minutes
+          attemptInfo.lockedUntil = Date.now() + 10 * 60 * 1000;
         }
         failedLoginAttempts[email] = attemptInfo;
       }
@@ -35,13 +40,12 @@ export async function POST(request: Request) {
     }
 
     const data = await res.json();
+    console.log('Login successful, received data for user:', data.user?.email);
     
-    // Clear locked attempts on successful login
     if (failedLoginAttempts[email]) {
       delete failedLoginAttempts[email];
     }
 
-    // Set secure cookie (Task 2.3)
     const response = NextResponse.json({ success: true, user: data.user });
     
     response.cookies.set({
@@ -51,11 +55,16 @@ export async function POST(request: Request) {
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'lax',
       path: '/',
-      maxAge: 10 * 60 * 60, // 10 hours
+      maxAge: 10 * 60 * 60,
     });
 
     return response;
-  } catch (error) {
-    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
+  } catch (error: any) {
+    console.error('CRITICAL API ERROR:', error);
+    return NextResponse.json({ 
+      error: error.message || 'Internal Server Error',
+      details: error.stack 
+    }, { status: 500 });
   }
 }
+

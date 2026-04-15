@@ -3,10 +3,10 @@ export declare class AppointmentsService {
     private prisma;
     constructor(prisma: PrismaService);
     getDoctors(): Promise<{
-        name: string;
         id: string;
         createdAt: Date;
         updatedAt: Date;
+        name: string;
         specialty: string;
         experience: string;
         image: string | null;
@@ -43,10 +43,10 @@ export declare class AppointmentsService {
     }>;
     getUserAppointments(userId: string): Promise<({
         doctor: {
-            name: string;
             id: string;
             createdAt: Date;
             updatedAt: Date;
+            name: string;
             specialty: string;
             experience: string;
             image: string | null;

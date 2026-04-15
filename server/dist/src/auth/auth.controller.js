@@ -26,6 +26,16 @@ let AuthController = class AuthController {
     async login(loginDto) {
         return this.authService.login(loginDto.email, loginDto.password);
     }
+    async seedAdmins() {
+        return this.authService.seedAdmins();
+    }
+    async validateAdminRoute(authHeader) {
+        if (!authHeader || !authHeader.startsWith('Bearer ')) {
+            throw new common_1.UnauthorizedException('Missing or invalid Authorization header');
+        }
+        const token = authHeader.split(' ')[1];
+        return this.authService.validateToken(token);
+    }
 };
 exports.AuthController = AuthController;
 __decorate([
@@ -43,6 +53,20 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], AuthController.prototype, "login", null);
+__decorate([
+    (0, common_1.HttpCode)(common_1.HttpStatus.OK),
+    (0, common_1.Post)('seed-admins'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], AuthController.prototype, "seedAdmins", null);
+__decorate([
+    (0, common_1.Get)('validate'),
+    __param(0, (0, common_1.Headers)('authorization')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], AuthController.prototype, "validateAdminRoute", null);
 exports.AuthController = AuthController = __decorate([
     (0, common_1.Controller)('auth'),
     __metadata("design:paramtypes", [auth_service_1.AuthService])

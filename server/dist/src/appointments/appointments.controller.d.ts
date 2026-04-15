@@ -4,10 +4,10 @@ export declare class AppointmentsController {
     constructor(appointmentsService: AppointmentsService);
     getAppointments(userId: string): Promise<({
         doctor: {
-            name: string;
             id: string;
             createdAt: Date;
             updatedAt: Date;
+            name: string;
             specialty: string;
             experience: string;
             image: string | null;
@@ -37,10 +37,10 @@ export declare class AppointmentsController {
         status: import("@prisma/client").$Enums.AppointmentStatus;
     })[]>;
     getDoctors(): Promise<{
-        name: string;
         id: string;
         createdAt: Date;
         updatedAt: Date;
+        name: string;
         specialty: string;
         experience: string;
         image: string | null;

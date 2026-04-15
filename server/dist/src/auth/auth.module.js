@@ -10,11 +10,18 @@ exports.AuthModule = void 0;
 const common_1 = require("@nestjs/common");
 const auth_service_1 = require("./auth.service");
 const auth_controller_1 = require("./auth.controller");
+const jwt_1 = require("@nestjs/jwt");
 let AuthModule = class AuthModule {
 };
 exports.AuthModule = AuthModule;
 exports.AuthModule = AuthModule = __decorate([
     (0, common_1.Module)({
+        imports: [
+            jwt_1.JwtModule.register({
+                secret: process.env.JWT_SECRET || 'super-secret-key-replace-in-production',
+                signOptions: { expiresIn: '10h' },
+            }),
+        ],
         providers: [auth_service_1.AuthService],
         controllers: [auth_controller_1.AuthController],
     })

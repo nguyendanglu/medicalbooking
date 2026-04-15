@@ -81,10 +81,12 @@ let AuthService = class AuthService {
             where: { email },
         });
         if (!user) {
+            console.log(`Login failed: user with email ${email} not found`);
             throw new common_1.UnauthorizedException('Invalid credentials');
         }
         const isMatch = await bcrypt.compare(pass, user.password);
         if (!isMatch) {
+            console.log(`Login failed: Invalid password for ${email}`);
             throw new common_1.UnauthorizedException('Invalid credentials');
         }
         const payload = { sub: user.id, email: user.email, role: user.role };
@@ -94,6 +96,49 @@ let AuthService = class AuthService {
             user: result,
             accessToken: await this.jwtService.signAsync(payload),
         };
+    }
+    async seedAdmins() {
+        const roles = ['ADMIN', 'DOCTOR', 'STAFF'];
+        const createdUsers = [];
+        for (const role of roles) {
+            const email = `${role.toLowerCase()}@clinic.com`;
+            const existingUser = await this.prisma.user.findUnique({
+                where: { email },
+            });
+            if (!existingUser) {
+                const hashedPassword = await bcrypt.hash('P@ssw0rd123', 10);
+                const newUser = await this.prisma.user.create({
+                    data: {
+                        email,
+                        password: hashedPassword,
+                        firstName: 'Test',
+                        lastName: role,
+                        role,
+                    },
+                });
+                createdUsers.push(newUser.email);
+            }
+        }
+        return {
+            message: 'Seed completed',
+            createdUsers,
+        };
+    }
+    async validateToken(token) {
+        try {
+            const payload = await this.jwtService.verifyAsync(token);
+            const adminRoles = ['ADMIN', 'DOCTOR', 'STAFF'];
+            if (!adminRoles.includes(payload.role)) {
+                throw new common_1.UnauthorizedException('Insufficient privileges. Admin access required.');
+            }
+            return {
+                valid: true,
+                user: payload
+            };
+        }
+        catch (e) {
+            throw new common_1.UnauthorizedException('Invalid or expired token.');
+        }
     }
 };
 exports.AuthService = AuthService;

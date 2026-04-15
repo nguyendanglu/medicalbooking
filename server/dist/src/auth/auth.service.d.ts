@@ -24,4 +24,12 @@ export declare class AuthService {
         };
         accessToken: string;
     }>;
+    seedAdmins(): Promise<{
+        message: string;
+        createdUsers: string[];
+    }>;
+    validateToken(token: string): Promise<{
+        valid: boolean;
+        user: any;
+    }>;
 }

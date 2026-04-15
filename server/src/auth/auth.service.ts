@@ -42,11 +42,13 @@ export class AuthService {
     });
 
     if (!user) {
+      console.log(`Login failed: user with email ${email} not found`);
       throw new UnauthorizedException('Invalid credentials');
     }
 
     const isMatch = await bcrypt.compare(pass, user.password);
     if (!isMatch) {
+      console.log(`Login failed: Invalid password for ${email}`);
       throw new UnauthorizedException('Invalid credentials');
     }
 
