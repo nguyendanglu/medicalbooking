@@ -9,9 +9,9 @@ export declare class AppointmentsController {
             createdAt: Date;
             updatedAt: Date;
             name: string;
+            image: string | null;
             specialty: string;
             experience: string;
-            image: string | null;
             rating: number | null;
         };
         serviceType: {
@@ -44,9 +44,9 @@ export declare class AppointmentsController {
             createdAt: Date;
             updatedAt: Date;
             name: string;
+            image: string | null;
             specialty: string;
             experience: string;
-            image: string | null;
             rating: number | null;
         };
         serviceType: {
@@ -79,9 +79,9 @@ export declare class AppointmentsController {
             createdAt: Date;
             updatedAt: Date;
             name: string;
+            image: string | null;
             specialty: string;
             experience: string;
-            image: string | null;
             rating: number | null;
         };
         serviceType: {
@@ -113,9 +113,9 @@ export declare class AppointmentsController {
         createdAt: Date;
         updatedAt: Date;
         name: string;
+        image: string | null;
         specialty: string;
         experience: string;
-        image: string | null;
         rating: number | null;
     }[]>;
     getServices(): Promise<{

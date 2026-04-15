@@ -18,6 +18,12 @@ enum HealthCondition {
   POST_OP_RECOV     // Hồi phục sau phẫu thuật
 }
 
+enum PatientStatus {
+  STABLE
+  OBSERVATION
+  CRITICAL
+}
+
 generator client {
   provider = "prisma-client-js"
 }
@@ -126,6 +132,8 @@ model PatientProfile {
   gender          String?
   bloodType       String?
   address         String?
+  status          PatientStatus @default(STABLE) 
+  image        String?
   medicalHistory  String?   @db.Text
   allergies       String?   @db.Text
   

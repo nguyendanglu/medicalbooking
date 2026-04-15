@@ -8,9 +8,9 @@ export declare class AppointmentsService {
         createdAt: Date;
         updatedAt: Date;
         name: string;
+        image: string | null;
         specialty: string;
         experience: string;
-        image: string | null;
         rating: number | null;
     }[]>;
     getServices(): Promise<{
@@ -49,9 +49,9 @@ export declare class AppointmentsService {
             createdAt: Date;
             updatedAt: Date;
             name: string;
+            image: string | null;
             specialty: string;
             experience: string;
-            image: string | null;
             rating: number | null;
         };
         serviceType: {
@@ -88,9 +88,9 @@ export declare class AppointmentsService {
             createdAt: Date;
             updatedAt: Date;
             name: string;
+            image: string | null;
             specialty: string;
             experience: string;
-            image: string | null;
             rating: number | null;
         };
         serviceType: {
@@ -123,9 +123,9 @@ export declare class AppointmentsService {
             createdAt: Date;
             updatedAt: Date;
             name: string;
+            image: string | null;
             specialty: string;
             experience: string;
-            image: string | null;
             rating: number | null;
         };
         serviceType: {
