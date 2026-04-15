@@ -143,7 +143,7 @@ export default function AppointmentsPage() {
             <span className="material-symbols-outlined">calendar_today</span>
             <span className="text-sm font-medium">Appointments</span>
           </Link>
-          <Link href="#" className="flex items-center gap-3 px-4 py-3 rounded-full text-slate-500 dark:text-slate-400 hover:text-blue-600 hover:bg-slate-200/50 transition-colors">
+          <Link href="/patients" className="flex items-center gap-3 px-4 py-3 rounded-full text-slate-500 dark:text-slate-400 hover:text-blue-600 hover:bg-slate-200/50 transition-colors">
             <span className="material-symbols-outlined">group</span>
             <span className="text-sm font-medium">Patient CRM</span>
           </Link>

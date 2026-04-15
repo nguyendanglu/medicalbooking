@@ -109,8 +109,8 @@ model Appointment {
   serviceType   ServiceType @relation(fields: [serviceTypeId], references: [id])
   timeSlot      String
   date          String
-  patientId     Int         @default(0)
-  patient       PatientProfile @relation(fields: [patientId], references: [id])
+  patientId     Int?
+  patient       PatientProfile? @relation(fields: [patientId], references: [id])
   patientName   String
   patientPhone  String
   reason        String

@@ -36,7 +36,7 @@ export declare class AppointmentsService {
         serviceTypeId: string;
         timeSlot: string;
         date: string;
-        patientId: number;
+        patientId: number | null;
         patientName: string;
         patientPhone: string;
         reason: string;
@@ -71,7 +71,7 @@ export declare class AppointmentsService {
         serviceTypeId: string;
         timeSlot: string;
         date: string;
-        patientId: number;
+        patientId: number | null;
         patientName: string;
         patientPhone: string;
         reason: string;
@@ -110,7 +110,7 @@ export declare class AppointmentsService {
         serviceTypeId: string;
         timeSlot: string;
         date: string;
-        patientId: number;
+        patientId: number | null;
         patientName: string;
         patientPhone: string;
         reason: string;
@@ -145,7 +145,7 @@ export declare class AppointmentsService {
         serviceTypeId: string;
         timeSlot: string;
         date: string;
-        patientId: number;
+        patientId: number | null;
         patientName: string;
         patientPhone: string;
         reason: string;
