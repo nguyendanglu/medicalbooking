@@ -7,6 +7,8 @@ export declare class PrismaService implements OnModuleInit, OnModuleDestroy {
     get serviceType(): import("@prisma/client").Prisma.ServiceTypeDelegate<import("@prisma/client/runtime/client").DefaultArgs, import("@prisma/client").Prisma.PrismaClientOptions>;
     get timeSlot(): import("@prisma/client").Prisma.TimeSlotDelegate<import("@prisma/client/runtime/client").DefaultArgs, import("@prisma/client").Prisma.PrismaClientOptions>;
     get appointment(): import("@prisma/client").Prisma.AppointmentDelegate<import("@prisma/client/runtime/client").DefaultArgs, import("@prisma/client").Prisma.PrismaClientOptions>;
+    get patientProfile(): import("@prisma/client").Prisma.PatientProfileDelegate<import("@prisma/client/runtime/client").DefaultArgs, import("@prisma/client").Prisma.PrismaClientOptions>;
+    get medicalDocument(): import("@prisma/client").Prisma.MedicalDocumentDelegate<import("@prisma/client/runtime/client").DefaultArgs, import("@prisma/client").Prisma.PrismaClientOptions>;
     constructor();
     onModuleInit(): Promise<void>;
     onModuleDestroy(): Promise<void>;

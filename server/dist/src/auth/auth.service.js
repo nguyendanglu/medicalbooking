@@ -124,6 +124,24 @@ let AuthService = class AuthService {
             createdUsers,
         };
     }
+    async changePassword(userId, currentPassword, newPassword) {
+        const complexityRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+        if (!complexityRegex.test(newPassword)) {
+            throw new common_1.BadRequestException('Password must be at least 8 characters and contain at least one uppercase letter, one lowercase letter, and one number.');
+        }
+        const user = await this.prisma.user.findUnique({ where: { id: userId } });
+        if (!user)
+            throw new common_1.UnauthorizedException('User not found.');
+        const isMatch = await bcrypt.compare(currentPassword, user.password);
+        if (!isMatch)
+            throw new common_1.UnauthorizedException('The current password you entered is incorrect.');
+        const hashedPassword = await bcrypt.hash(newPassword, 10);
+        await this.prisma.user.update({
+            where: { id: userId },
+            data: { password: hashedPassword },
+        });
+        return { message: 'Password updated successfully.' };
+    }
     async validateToken(token) {
         try {
             const payload = await this.jwtService.verifyAsync(token);

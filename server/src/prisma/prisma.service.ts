@@ -28,6 +28,14 @@ export class PrismaService implements OnModuleInit, OnModuleDestroy {
     return this.client.appointment;
   }
 
+  get patientProfile() {
+    return this.client.patientProfile;
+  }
+
+  get medicalDocument() {
+    return this.client.medicalDocument;
+  }
+
   constructor() {
     const connectionString = process.env.DATABASE_URL;
 

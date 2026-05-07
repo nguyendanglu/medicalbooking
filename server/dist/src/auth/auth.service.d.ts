@@ -28,6 +28,9 @@ export declare class AuthService {
         message: string;
         createdUsers: string[];
     }>;
+    changePassword(userId: string, currentPassword: string, newPassword: string): Promise<{
+        message: string;
+    }>;
     validateToken(token: string): Promise<{
         valid: boolean;
         user: any;

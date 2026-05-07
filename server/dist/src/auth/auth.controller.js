@@ -36,6 +36,14 @@ let AuthController = class AuthController {
         const token = authHeader.split(' ')[1];
         return this.authService.validateToken(token);
     }
+    async changePassword(authHeader, body) {
+        if (!authHeader || !authHeader.startsWith('Bearer ')) {
+            throw new common_1.UnauthorizedException('Missing or invalid Authorization header');
+        }
+        const token = authHeader.split(' ')[1];
+        const { user } = await this.authService.validateToken(token);
+        return this.authService.changePassword(user.sub, body.currentPassword, body.newPassword);
+    }
 };
 exports.AuthController = AuthController;
 __decorate([
@@ -67,6 +75,15 @@ __decorate([
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], AuthController.prototype, "validateAdminRoute", null);
+__decorate([
+    (0, common_1.HttpCode)(common_1.HttpStatus.OK),
+    (0, common_1.Patch)('change-password'),
+    __param(0, (0, common_1.Headers)('authorization')),
+    __param(1, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Object]),
+    __metadata("design:returntype", Promise)
+], AuthController.prototype, "changePassword", null);
 exports.AuthController = AuthController = __decorate([
     (0, common_1.Controller)('auth'),
     __metadata("design:paramtypes", [auth_service_1.AuthService])

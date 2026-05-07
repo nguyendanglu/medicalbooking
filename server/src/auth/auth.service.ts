@@ -95,7 +95,7 @@ export class AuthService {
   }
 
   async changePassword(
-    userId: number,
+    userId: string,
     currentPassword: string,
     newPassword: string,
   ) {

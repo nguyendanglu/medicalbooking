@@ -19,7 +19,7 @@ export async function middleware(request: NextRequest) {
       // The backend /api/auth/login validates the signature.
       const payloadBase64Url = token.split('.')[1];
       const payloadBase64 = payloadBase64Url.replace(/-/g, '+').replace(/_/g, '/');
-      const payloadJson = Buffer.from(payloadBase64, 'base64').toString('utf8');
+      const payloadJson = decodeURIComponent(escape(atob(payloadBase64)));
       const payload = JSON.parse(payloadJson);
 
       const role = payload.role;

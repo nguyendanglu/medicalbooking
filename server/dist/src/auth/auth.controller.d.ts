@@ -30,4 +30,10 @@ export declare class AuthController {
         valid: boolean;
         user: any;
     }>;
+    changePassword(authHeader: string, body: {
+        currentPassword: string;
+        newPassword: string;
+    }): Promise<{
+        message: string;
+    }>;
 }
